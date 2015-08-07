@@ -1,0 +1,38 @@
+<head>
+  <title>clase1</title>
+</head>
+
+<body>
+  <h1>Welcome to Meteor!</h1>
+<!-- 
+  {{> hello}}
+  {{> cuenta}}
+
+ -->  
+  {{> hello}}
+{{> listalu}}
+
+</body>
+
+<template name="hello">
+  <button>Clickeame</button>
+  <p>Usted ha presionado el boton {{counter}} veces.</p>
+  <p>El menos uno es {{menos1}}</p>
+</template>
+
+<template name="cuenta">
+	 <p>El menos uno es {{cuentaMenos1}}</p>
+ 
+</template>
+
+
+<template name="listalu">
+<p> Listado de alumnos </p>
+	<ul>
+      {{#each alumnos}}
+       <p> {{nombre}} </p>
+      {{/each}}
+    </ul>
+
+
+</template>	
