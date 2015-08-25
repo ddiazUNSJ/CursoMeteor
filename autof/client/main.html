@@ -1,0 +1,14 @@
+<!-- client/main.html -->
+<!-- <body>
+  <div class="container">
+    <h1>Posts</h1>
+
+    {{> quickForm collection="Posts" id="insertPostForm" type="insert"}}
+  </div>
+</body> -->
+
+<template name="main">
+  <div class="container">
+    {{> yield}}
+  </div>
+</template>

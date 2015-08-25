@@ -1,26 +1,26 @@
-// Ideas = new Mongo.Collection("ideas");
+Ideas = new Mongo.Collection("ideas");
 
-// var Schemas = {};
+var Schemas = {};
 
-// Schemas.Ideas = new SimpleSchema({
-//     idTitulo: {
-//         type: String,
-//         label: "Titulo de la Idea",
-//         max: 200
-//     },
-//     autor: {
-//         type: String,
-//         label: "Author"
-//     },
-//     fechaDeCreacion: {
-//         type: Date,
-//         label: "Fecha en la cual fue creada la idea",
-//         optional: true
-//     }
-//     }
-// });
+Schemas.Ideas = new SimpleSchema({
+    idTitulo: {
+        type: String,
+        label: "Titulo de la Idea",
+        max: 200
+    },
+    autor: {
+        type: String,
+        label: "Author"
+    },
+    fechaDeCreacion: {
+        type: Date,
+        label: "Fecha en la cual fue creada la idea",
+        optional: true
+    }
 
-// Ideas.attachSchema(Schemas.Ideas);
+});
+
+Ideas.attachSchema(Schemas.Ideas);
 
 
 Alumnos = new Mongo.Collection("alumnos");
@@ -34,6 +34,7 @@ if (Meteor.isClient) {
   Session.setDefault('idGrupo', 0); 
 
 Meteor.subscribe("alumnos");
+Meteor.subscribe("ideas");
 
   Template.hello.helpers({
     counter: function () {
@@ -83,6 +84,12 @@ Template.listalu.helpers({
 
  });
 
+Template.listalu.events({
+    'click button': function () {
+      // increment the counter when button is clicked
+      Ideas.insert( { idTitulo: "nueva Idea", autor: "diaz", fechaDeCreacion:"hoydia"});
+    }
+  });
 
 }
 
@@ -94,6 +101,10 @@ if (Meteor.isServer) {
 
   Meteor.publish("alumnos", function () {
     return Alumnos.find();
+  });
+
+Meteor.publish("ideas", function () {
+    return Ideas.find();
   });
 
     // code to run on server at startup
