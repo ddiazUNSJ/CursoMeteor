@@ -1,7 +1,39 @@
+// Ideas = new Mongo.Collection("ideas");
+
+// var Schemas = {};
+
+// Schemas.Ideas = new SimpleSchema({
+//     idTitulo: {
+//         type: String,
+//         label: "Titulo de la Idea",
+//         max: 200
+//     },
+//     autor: {
+//         type: String,
+//         label: "Author"
+//     },
+//     fechaDeCreacion: {
+//         type: Date,
+//         label: "Fecha en la cual fue creada la idea",
+//         optional: true
+//     }
+//     }
+// });
+
+// Ideas.attachSchema(Schemas.Ideas);
+
+
+Alumnos = new Mongo.Collection("alumnos");
+
 
 if (Meteor.isClient) {
   // counter starts at 0
   Session.setDefault('counter', 0);
+  Session.setDefault('sesionC', 0); // Dato donde se carga la sesion de creatividad a la que accede el usuario
+  Session.setDefault('idUsuario', 0); 
+  Session.setDefault('idGrupo', 0); 
+
+Meteor.subscribe("alumnos");
 
   Template.hello.helpers({
     counter: function () {
@@ -27,12 +59,30 @@ Template.cuenta.helpers({
  });
 
 
+// Template.listalu.helpers({
+//  alumnos: function () {
+//       return alumnos.find({});
+//     }
+//  });
+
+
+
+
 Template.listalu.helpers({
- alumnos: [
-    { nombre: "Daniel", apellido: "diaz" },
-    { nombre: "Sandra", apellido: "oviedo" }
-    ]
+ alumnos: function () {
+   return Alumnos.find({});
+    },
+ alumnosSandra:function () {
+   return Alumnos.find({nombre:"Sandra"});
+    }  
+
+ // alumnos: [
+ //    { nombre: "Daniel", apellido: "diaz" },
+ //    { nombre: "Sandra", apellido: "oviedo" }
+ //    ]
+
  });
+
 
 }
 
@@ -41,6 +91,15 @@ Template.listalu.helpers({
 
 if (Meteor.isServer) {
   Meteor.startup(function () {
+
+  Meteor.publish("alumnos", function () {
+    return Alumnos.find();
+  });
+
     // code to run on server at startup
+
+    Alumnos.insert( { nombre: "Daniel", apellido: "diaz" });
+
+    Alumnos.insert( { nombre: "Sandra", apellido: "oviedo" });
   });
 }

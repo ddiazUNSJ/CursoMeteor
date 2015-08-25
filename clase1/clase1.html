@@ -9,7 +9,8 @@
   {{> cuenta}}
 
  -->  
-  {{> hello}}
+<!--   {{> hello}} -->
+
 {{> listalu}}
 
 </body>
@@ -33,6 +34,10 @@
        <p> {{nombre}} </p>
       {{/each}}
     </ul>
-
-
+ <p> Listado de alumnos llamados Sandra </p>
+  <ul>
+      {{#each alumnosSandra}}
+       <p> {{nombre}} </p>
+      {{/each}}
+    </ul>   
 </template>	
