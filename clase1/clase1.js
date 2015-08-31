@@ -86,8 +86,10 @@ Template.listalu.helpers({
 
 Template.listalu.events({
     'click button': function () {
+
       // increment the counter when button is clicked
-      Ideas.insert( { idTitulo: "nueva Idea", autor: "diaz", fechaDeCreacion:"hoydia"});
+      Ideas.insert( { idTitulo: "Otra Idea", autor: "diaz", fechaDeCreacion:"ho"});
+
     }
   });
 
@@ -103,11 +105,12 @@ if (Meteor.isServer) {
     return Alumnos.find();
   });
 
-Meteor.publish("ideas", function () {
+  Meteor.publish("ideas", function () {
     return Ideas.find();
   });
 
     // code to run on server at startup
+    Ideas.insert( { idTitulo: "Nueva Idea", autor: "diaz", fechaDeCreacion:11/8/2015});
 
     Alumnos.insert( { nombre: "Daniel", apellido: "diaz" });
 
