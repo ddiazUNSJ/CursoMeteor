@@ -28,7 +28,7 @@ Alumnos = new Mongo.Collection("alumnos");
 
 if (Meteor.isClient) {
   // counter starts at 0
-  Session.setDefault('counter', 0);
+  Session.setDefault('counter', 7);
   Session.setDefault('sesionC', 0); // Dato donde se carga la sesion de creatividad a la que accede el usuario
   Session.setDefault('idUsuario', 0); 
   Session.setDefault('idGrupo', 0); 
@@ -37,7 +37,7 @@ Meteor.subscribe("alumnos");
 Meteor.subscribe("ideas");
 
   Template.hello.helpers({
-    counter: function () {
+    counter2: function () {
       return Session.get('counter');
     },
     menos1:function () {
@@ -75,7 +75,11 @@ Template.listalu.helpers({
     },
  alumnosSandra:function () {
    return Alumnos.find({nombre:"Sandra"});
-    }  
+    } ,
+
+ contador: function () {
+  return Session.get('counter');
+   }
 
  // alumnos: [
  //    { nombre: "Daniel", apellido: "diaz" },
@@ -86,16 +90,15 @@ Template.listalu.helpers({
 
 Template.listalu.events({
     'click button': function () {
-
       // increment the counter when button is clicked
-      Ideas.insert( { idTitulo: "Otra Idea", autor: "diaz", fechaDeCreacion:"ho"});
+      // Session.set('counter', 26);
+      Session.set('counter', (Session.get('counter') + 1));
+   //   Ideas.insert( { idTitulo: "Otra Idea", autor: "diaz", fechaDeCreacion:"ho"});
 
     }
   });
 
 }
-
-
 
 
 if (Meteor.isServer) {
