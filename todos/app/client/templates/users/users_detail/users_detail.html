@@ -1,0 +1,23 @@
+<template name="UsersDetail">
+  {{#contentFor 'breadcrumbs'}}
+    <li class="active">{{profile.name}}</li>
+  {{/contentFor}}
+
+  <div class="todos-panel">
+    <ul class="todos-list">
+      {{#each todos}}
+        <li class="todo-item {{isDoneClass}}">
+          <div class="subject">
+            {{#linkTo route='todos.detail'}}
+              {{subject}}
+            {{/linkTo}}
+          </div>
+        </li>
+      {{else}}
+        <li class="todo-item empty">
+          No todos yet.
+        </li>
+      {{/each}}
+    </ul>
+  </div>
+</template>
