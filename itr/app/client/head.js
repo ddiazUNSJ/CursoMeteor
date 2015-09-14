@@ -1,6 +1,6 @@
-/*****************************************************************************/
-/* Client App Namespace  */
-/*****************************************************************************/
+///*****************************************************************************/
+///* Client App Namespace  */
+///*****************************************************************************/
 _.extend(App, {
 });
 
@@ -11,8 +11,9 @@ _.each(App.helpers, function (helper, key) {
   Handlebars.registerHelper(key, helper);
 });
 
-
-Meteor.startup(function() {
-  //AceEditor
-  editor = null;
-});
+//
+//Meteor.startup(function() {
+//  //AceEditor
+//  editor = null;
+//    
+//});

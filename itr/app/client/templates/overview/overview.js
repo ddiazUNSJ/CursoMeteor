@@ -1,7 +1,8 @@
+
 /*****************************************************************************/
-/* MasterLayout: Event Handlers and Helpersss .js*/
+/* Overview: Event Handlers and Helpersss .js*/
 /*****************************************************************************/
-Template.MasterLayout.events({
+Template.Overview.events({
   /*
    * Example:
    *  'click .selector': function (e, tmpl) {
@@ -10,7 +11,7 @@ Template.MasterLayout.events({
    */
 });
 
-Template.MasterLayout.helpers({
+Template.Overview.helpers({
   /*
    * Example:
    *  items: function () {
@@ -20,13 +21,18 @@ Template.MasterLayout.helpers({
 });
 
 /*****************************************************************************/
-/* MasterLayout: Lifecycle Hooks */
+/* Overview: Lifecycle Hooks */
 /*****************************************************************************/
-Template.MasterLayout.created = function () {
+Template.Overview.created = function () {
 };
 
-Template.MasterLayout.rendered = function () {
+Template.Overview.rendered = function () {
+  $('.waypoint').waypoint(function() {
+    $(this).addClass('show');
+  }, {offset:'80%'});  
 };
 
-Template.MasterLayout.destroyed = function () {
+Template.Overview.destroyed = function () {
 };
+
+

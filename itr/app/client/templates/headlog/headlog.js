@@ -1,32 +1,41 @@
+
 /*****************************************************************************/
-/* MasterLayout: Event Handlers and Helpersss .js*/
+/* HeadLog: Event Handlers and Helpersss .js*/
 /*****************************************************************************/
-Template.MasterLayout.events({
+Template.HeadLog.events({
   /*
    * Example:
    *  'click .selector': function (e, tmpl) {
    *
    *  }
    */
+  
 });
 
-Template.MasterLayout.helpers({
+Template.HeadLog.helpers({
   /*
    * Example:
    *  items: function () {
    *    return Items.find();
    *  }
    */
+  activeIfTemplateIs: function (template) {
+    var currentRoute = Router.current();
+    return currentRoute && template === currentRoute.lookupTemplate() ? 'active' : '';
+  }  
 });
 
+
 /*****************************************************************************/
-/* MasterLayout: Lifecycle Hooks */
+/* HeadLog: Lifecycle Hooks */
 /*****************************************************************************/
-Template.MasterLayout.created = function () {
+Template.HeadLog.created = function () {
 };
 
-Template.MasterLayout.rendered = function () {
+Template.HeadLog.rendered = function () {
 };
 
-Template.MasterLayout.destroyed = function () {
+Template.HeadLog.destroyed = function () {
 };
+
+
