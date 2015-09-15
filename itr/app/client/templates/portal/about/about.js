@@ -1,13 +1,23 @@
-/*****************************************************************************/
-/* About: Event Handlers */
-/*****************************************************************************/
-Template.About.events({
-});
 
 /*****************************************************************************/
-/* About: Helpers */
+/* About: Event Handlers and Helpersss .js*/
 /*****************************************************************************/
+Template.About.events({
+  /*
+   * Example:
+   *  'click .selector': function (e, tmpl) {
+   *
+   *  }
+   */ 
+});
+
 Template.About.helpers({
+  /*
+   * Example:
+   *  items: function () {
+   *    return Items.find();
+   *  }
+   */
 });
 
 /*****************************************************************************/
@@ -21,3 +31,5 @@ Template.About.rendered = function () {
 
 Template.About.destroyed = function () {
 };
+
+
