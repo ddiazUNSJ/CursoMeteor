@@ -53,7 +53,7 @@ else
       console.log("soy user meteor");
     if(Session.equals('firstLogin', true))
      {
-      this.redirect('overview');
+      this.redirect('portal');
       Session.set('firstLogin', false);
       } 
     else
@@ -86,7 +86,7 @@ else
 
 
 Router.map(function () {
-  this.route('overview', {path: '/'});
+  this.route('portal', {path: '/'});
   this.route('register', {path: '/accounts/register'});
   this.route('login', {path: '/accounts/login'});
   this.route('errorlog', {path: '/shared/errorlog'});

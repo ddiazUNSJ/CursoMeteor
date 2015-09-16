@@ -1,4 +1,4 @@
-OverviewController = RouteController.extend({
+PortalController = RouteController.extend({
   yieldTemplates: {
     'Header': {to: 'Header'},
     'Footer': {to: 'Footer'}
@@ -9,6 +9,8 @@ OverviewController = RouteController.extend({
   // this.subscribe('item', this.params._id).wait();
   
   subscriptions: function() {
+      
+      this.subscribe("users");
   },
   
   // Subscriptions or other things we want to "wait" on. This also

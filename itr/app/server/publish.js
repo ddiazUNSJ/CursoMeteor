@@ -32,8 +32,6 @@ Meteor.publish("users", function () {
     console.log('publishing users', this.userId)
     return Meteor.users.find({}, {fields: {emails: 1, profile: 1, roles: 1}});
   } 
-
-
   this.stop();
   return;
 });

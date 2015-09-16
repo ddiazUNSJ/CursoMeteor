@@ -1,38 +1,44 @@
 
 /*****************************************************************************/
-/* Portal: Event Handlers and Helpersss .js*/
+/* Header: Event Handlers and Helpersss .js*/
 /*****************************************************************************/
-Template.Portal.events({
+Template.Header.events({
   /*
    * Example:
    *  'click .selector': function (e, tmpl) {
    *
    *  }
    */
+  
 });
 
-Template.Portal.helpers({
+Template.Header.helpers({
   /*
    * Example:
    *  items: function () {
    *    return Items.find();
    *  }
    */
+  activeIfTemplateIs: function (template) {
+    var currentRoute = Router.current();
+    return currentRoute && template === currentRoute.lookupTemplate() ? 'active' : '';
+  } ,
+    userName: function(){
+       
+        return Meteor.user().profile.name;}
 });
 
+
 /*****************************************************************************/
-/* Portal: Lifecycle Hooks */
+/* Header: Lifecycle Hooks */
 /*****************************************************************************/
-Template.Portal.created = function () {
+Template.Header.created = function () {
 };
 
-Template.Portal.rendered = function () {
-  $('.waypoint').waypoint(function() {
-    $(this).addClass('show');
-  }, {offset:'80%'});  
+Template.Header.rendered = function () {
 };
 
-Template.Portal.destroyed = function () {
+Template.Header.destroyed = function () {
 };
 
 
