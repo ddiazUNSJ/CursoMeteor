@@ -8,8 +8,6 @@ Router.configure({
   trackPageView: true
 });
 
-
-
 Router._scrollToHash = function(hash) {
   var section = $(hash);
   if (section.length) {
@@ -20,12 +18,10 @@ Router._scrollToHash = function(hash) {
   }
 };
 
-
-
-/*
 beforeHooks = {
  isLoggedIn: function(){
-
+if (Meteor.user() !== undefined)
+{
 if (!Meteor.user()  ) 
  {
     if (Meteor.loggingIn()) {
@@ -33,24 +29,19 @@ if (!Meteor.user()  )
       } 
     else 
       {
-          this.render('Header',{to: 'Header'}); 
-          this.render('portal');
        console.log("adentro del else");
-        var ver=this.lookupTemplate();
-          
-//       this.render('HeadLog',{to: 'Header'}); // Muestra encabezado para Login
-    
-       if (ver=="Errorlog" || ver=="Register" || ver=="Login" )
-        {
-         this.render('HeadLog',{to: 'Header'}); // Muestra encabezado para Login
-         this.render(ver);
+       this.render('HeadLog',{to: 'Header'}); // Muestra encabezado para Login
+       var ver=this.lookupTemplate();
      
+       if (ver=="Errorlog" || ver=="Register" || ver=="Signout" )
+        {
+         this.render(ver);
           }
 
-        else 
-          {
-           this.render('Header',{to: 'Header'}); 
-          this.render('portal');
+       else 
+        {
+       
+       this.render('Login');
             
          }
        this.render('Footer',{to: 'Footer'});
@@ -59,10 +50,10 @@ if (!Meteor.user()  )
    }
 else 
   {
-    console.log("soy user meteor");
+      console.log("soy user meteor");
     if(Session.equals('firstLogin', true))
      {
-      this.redirect('dashboard1');
+      this.redirect('portal');
       Session.set('firstLogin', false);
       } 
     else
@@ -72,74 +63,13 @@ else
    // this.next();
   }
 
-
-
 }
-
-};
-
-esUsuarioHook={
- isUser:function(){
-     if (!Meter.User())
-         
- }
+else
+{
+     console.log("meteor.user() no definido");
+     this.next();
     
-};
-*/
-
-beforeHooks = {
- isLoggedIn: function(){
-
-if (!Meteor.user()  ) 
- {
-    if (Meteor.loggingIn()) {
-      this.render('Loading');
-      } 
-    else 
-      {
-          
-          this.render('Header',{to: 'Header'}); 
-          this.render('portal');
-          console.log("adentro del else");
-          var ver=this.lookupTemplate();
-          this.next();
-          
- /*      if (ver=="Errorlog" || ver=="Register" || ver=="Login" )
-        {
-         this.render('HeadLog',{to: 'Header'}); // Muestra encabezado para Login
-         this.render(ver);
-     
-          }
-
-        else 
-          {
-           this.render('Header',{to: 'Header'}); 
-          this.render('portal');
-            
-         }
-       this.render('Footer',{to: 'Footer'});
-       Session.set('firstLogin', true);*/
-      }
-   }
-else 
-  {
-  /*  console.log("soy user meteor");
-      this.redirect('clients');
-      
-    if(Session.equals('firstLogin', true))
-     {
-      this.redirect('clients');
-      Session.set('firstLogin', false);
-      } 
-    else
-     {
-      this.next();
-      }*/
-    this.next();
-  }
-
-
-
+ }
 }
 
 };
@@ -161,15 +91,9 @@ Router.map(function () {
   this.route('login', {path: '/accounts/login'});
   this.route('errorlog', {path: '/shared/errorlog'});
   this.route('signout', {path: '/signout'});
- Router.route('/clients', function () {
-    this.layout('mainLayout');
-    this.render('clients');
-});
   
 });
 
- 
-    
 
 // this.route('signout', {
 //     path: '/signout',
