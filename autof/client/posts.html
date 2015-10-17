@@ -1,12 +1,32 @@
 <template name="posts">
   <h1>Agregar Post</h1>
+<!--
   {{> quickForm collection="Posts" id="insertPostForm" type="insert"}}
-
+    <div class="form-group">
+    <button type="submit" class="btn btn-primary">Add Person</button>
+     </div>
+-->
+    
   <ul>
+
   	 
+ {{#autoForm collection="Posts" id="insertPostForm" type="insert"}}
+
+  {{> afQuickFields}}
+  <div>
+    <button type="submit" class="btn btn-primary">Enviar</button>
+  </div>
+  {{/autoForm}}
+      
     {{#each posts}} 
     
-      <li><a href="{{pathFor 'post.show'}}">{{title}}</a> - {{content}}</li>
+    
+<!--    pathFor es un helper de iron router que trabaja sobre el _id, es decir devuelve id-->
+      <li><a href="{{pathFor 'laposta'}}">{{title}}</a> - {{content}}</li>
+<!--    Por ejemplo si _id=title es lo que enviara como parametro al router laposta
+      <li><a href="{{pathFor 'laposta' _id=title}}">{{title}}</a> - {{content}}</li>
+       <li><a href="{{pathFor 'laposta' _id=content}}">{{title}}</a> - {{content}}</li>-->
+      
     {{/each}}
   </ul>
 </template>
