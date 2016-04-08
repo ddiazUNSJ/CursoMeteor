@@ -1,0 +1,35 @@
+<template name="Header">
+  <header role="banner">
+      <div class="navbar-affix">
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+          <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <strong><a class="navbar-brand" href="/">3D PRINTING DAY</a></strong>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <div class="container">
+                <ul class="nav navbar-nav navbar-right">
+                 
+                    
+                  <li class="{{ activeIfTemplateIs 'about' }}"> <a href="{{pathFor 'overview' hash='about'}}"><span class='glyphicon glyphicon-user'></span> Acerca de</a></li>
+                  <li class="{{ activeIfTemplateIs 'meetup' }}"><a href="{{pathFor 'overview' hash='meetup'}}"><span class='glyphicon glyphicon-map-marker'></span>My Meetup</a></li>
+                  <li><a href="{{pathFor 'overview' hash='contact'}}"><span class='glyphicon glyphicon-envelope'></span> Contact Me</a></li>
+                  <li class="{{ activeIfTemplateIs 'register' }}"> <a href="{{pathFor 'signout' }}"><span class=' glyphicon glyphicon-new-window'></span> Log out</a></li>
+                </ul>
+              </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+          </div>
+        </nav>
+      </div>
+  </header>
+</template>
+
+
