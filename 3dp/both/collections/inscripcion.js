@@ -47,3 +47,26 @@ Schema.InscriSchema .messages({
      keyNotInSchema: "[key] no esta permitido por el esquema"
  
 })
+
+
+
+// base de datos para preinscriptos
+
+Pinscri = new Mongo.Collection("pinscri");
+
+
+Pinscri.attachSchema(Schema.InscriSchema);
+//Pinscri.insert({nombre:"prueba",dni:"4958361",email:"any@body.com", telefono:"4234545",ocupacion:"obrero 3D" })
+
+if (Meteor.isClient) {
+Meteor.subscribe("pinscri");
+}
+
+if (Meteor.isServer) {
+  Meteor.startup(function () {
+  Meteor.publish("pinscri", function () {
+    return Pinscri.find();
+   });
+  });
+ }
+
