@@ -17,6 +17,9 @@ Router._scrollToHash = function(hash) {
   }
 };
 
+
+Si no es u
+
 beforeHooks = {
  isLoggedIn: function(){
 
