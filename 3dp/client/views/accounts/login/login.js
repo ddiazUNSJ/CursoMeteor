@@ -30,8 +30,10 @@ Template.Login.events({
     Meteor.loginWithPassword(inputName, inputPassword, function(err){
       //Router.go('about');
    // Router.go('errorlog');
-    if (err)
+    if (err){
        console.log(err);
+        Router.go('errorlog');
+     }
      else
      {
        console.log('success!');

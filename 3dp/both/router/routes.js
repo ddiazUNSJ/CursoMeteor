@@ -18,8 +18,56 @@ Router._scrollToHash = function(hash) {
 };
 
 
-Si no es u
 
+beforeHooks = {
+ isLoggedIn: function(){
+
+if (! Meteor.user()  ) {  //usuario no logeado
+    
+    if (Meteor.loggingIn()) { // usuario no logeado pero logeandose ahora
+      this.render('Loading');
+      }
+    else //
+        
+    {
+       var ver=this.lookupTemplate();
+       if (ver=="Errorlog" || ver=="Register" || ver=="Login" )
+        {
+         this.render('HeadLog',{to: 'Header'});    
+         this.render(ver);
+          }
+       else 
+        {
+        this.render('Header',{to: 'Header'}); // Muestra encabezado que incluye inicio de sesion
+       // this.redirect('overview');
+            this.render('overview');
+             this.next();
+       //  this.render('Login');
+            
+         }
+     // this.render('Footer',{to: 'Footer'});
+      Session.set('firstLogin', true);
+      }
+    
+  } else { //usuario logeado
+      
+    if(Session.equals('firstLogin', true)) {
+         this.render('Header2', {to: 'Header'})
+      this.redirect('overview');
+      Session.set('firstLogin', false);
+    } else {
+      this.next();
+    }
+   // this.next();
+  }
+
+
+}
+
+};
+//******************************************
+// Tienes que loguearte para acceder a la pagina
+/*
 beforeHooks = {
  isLoggedIn: function(){
 
@@ -56,6 +104,7 @@ if (! Meteor.user()  ) {
 }
 
 };
+*/
 
 
  Router.onBeforeAction(beforeHooks.isLoggedIn);
