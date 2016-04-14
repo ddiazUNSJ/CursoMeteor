@@ -1,0 +1,46 @@
+/*****************************************************************************/
+/* Contact: Style */
+/*****************************************************************************/
+#contact button:focus,
+#contact button:active{
+  outline: none;
+}
+
+//bugfix setting textarea to fixed height because input group with input-group-lg does not sizes textarea properly, dirty and not working 100% when windows is rezised 
+.custom-control {
+  min-height: 212px !important;
+}
+
+#contact textarea {
+  min-height: 212px !important;
+}
+
+#contact .form-group {
+  padding-bottom : 15px;
+}
+
+@magic-color:          #FD7E00;//#ED8884
+@magic-color-light:     lighten(@magic-color, 20%);
+/*****************************************************************************/
+/* Contact: Style */
+/*****************************************************************************/
+#contact .form-control:focus {
+  border-bottom:3px solid @magic-color;
+  outline:none;
+  box-shadow:none;  
+  -webkit-transition:@magic-color .3s ease-in;
+  transition:@magic-color .3s ease-in;  
+}
+
+#contact button:focus,
+#contact button:active{
+  outline: none;
+}
+
+#contact .form-group {
+  padding-bottom : 15px;
+}
+
+.glyph-color {
+  color: @magic-color-light;
+}
