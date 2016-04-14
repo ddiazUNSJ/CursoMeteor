@@ -1,5 +1,7 @@
 // both/collections/posts.js
 
+
+
 Posts = new Mongo.Collection("posts");
 Posts.attachSchema(new SimpleSchema({
   title: {
@@ -10,6 +12,21 @@ Posts.attachSchema(new SimpleSchema({
   content: {
     type: String,
     label: "Content"
+  },
+  estamento: {
+    type: Boolean,
+    optional: true,
+    autoform: {
+      type: "select-radio",
+      options: function () {
+        return [
+          {label: "Estudiante", value: 1},
+          {label: "Docente/Investigador", value: 2},
+          {label: "Egresado", value: 3},
+          {label: "Otro", value: 4}
+        ];
+      }
+    }
   }
 }));
 if (Meteor.isClient) {
@@ -25,3 +42,9 @@ if (Meteor.isServer) {
  });
 }
  //Meteor.subscribe("posts");
+
+
+
+{
+  
+}

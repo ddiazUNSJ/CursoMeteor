@@ -21,7 +21,10 @@ Router._scrollToHash = function(hash) {
 };
 
 
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 /*
 beforeHooks = {
  isLoggedIn: function(){
@@ -73,11 +76,15 @@ else
   }
 
 
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 }
 
 };
 
+<<<<<<< Updated upstream
 esUsuarioHook={
  isUser:function(){
      if (!Meter.User())
@@ -86,17 +93,30 @@ esUsuarioHook={
     
 };
 */
+=======
+
+ */
+
+>>>>>>> Stashed changes
 
 beforeHooks = {
  isLoggedIn: function(){
 
+<<<<<<< Updated upstream
 if (!Meteor.user()  ) 
  {
+=======
+if (!Meteor.user() &&  ) 
+ {
+     
+      var ver=this.lookupTemplate();
+>>>>>>> Stashed changes
     if (Meteor.loggingIn()) {
       this.render('Loading');
       } 
     else 
       {
+<<<<<<< Updated upstream
           
           this.render('Header',{to: 'Header'}); 
           this.render('portal');
@@ -119,33 +139,67 @@ if (!Meteor.user()  )
          }
        this.render('Footer',{to: 'Footer'});
        Session.set('firstLogin', true);*/
+=======
+       console.log("adentro del else");
+
+          this.render('HeadLog',{to: 'Header'}); // Muestra encabezado para Login
+      
+     
+       if (ver=="Errorlog" || ver=="Register" || ver=="Signout" )
+        {
+         this.render(ver);
+          }
+
+       else 
+        {
+       
+       this.render('Login');
+            
+         }
+       this.render('Footer',{to: 'Footer'});
+       Session.set('firstLogin', true);
+>>>>>>> Stashed changes
       }
    }
 else 
   {
+<<<<<<< Updated upstream
   /*  console.log("soy user meteor");
       this.redirect('clients');
       
     if(Session.equals('firstLogin', true))
      {
       this.redirect('clients');
+=======
+      console.log("soy user meteor");
+    if(Session.equals('firstLogin', true))
+     {
+      this.redirect('portal');
+>>>>>>> Stashed changes
       Session.set('firstLogin', false);
       } 
     else
      {
       this.next();
+<<<<<<< Updated upstream
       }*/
     this.next();
   }
 
 
 
+=======
+      }
+   // this.next();
+  }
+
+
+>>>>>>> Stashed changes
 }
 
 };
 
 
- 
 
  Router.onBeforeAction(beforeHooks.isLoggedIn);
  //Router.onBeforeAction(beforeHooks.isLoggedIn, {only: ['about']});
