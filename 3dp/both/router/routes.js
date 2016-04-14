@@ -40,7 +40,7 @@ if (! Meteor.user()  ) {  //usuario no logeado
         {
         this.render('Header',{to: 'Header'}); // Muestra encabezado que incluye inicio de sesion
        // this.redirect('overview');
-            this.render('overview');
+            this.render('Overview');
              this.next();
        //  this.render('Login');
             
@@ -54,13 +54,13 @@ if (! Meteor.user()  ) {  //usuario no logeado
     if(Session.equals('userOk', true)) {
       
       this.render('Overlog');
-      Session.set('userOk', false);
+  //    Session.set('userOk', false);
       Session.set('firstLogin', false);
       this.next();
       } 
       else {
           if(Session.equals('firstLogin', true)) {
-             this.redirect('register');
+             this.redirect('Register');
              Session.set('firstLogin', false);
             } 
           else
