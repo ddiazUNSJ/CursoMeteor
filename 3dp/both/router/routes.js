@@ -51,13 +51,21 @@ if (! Meteor.user()  ) {  //usuario no logeado
     
   } else { //usuario logeado
       
-    if(Session.equals('firstLogin', true)) {
-         this.render('Header2', {to: 'Header'})
-      this.redirect('overview');
+    if(Session.equals('userOk', true)) {
+      
+      this.render('Overlog');
+      Session.set('userOk', false);
       Session.set('firstLogin', false);
-    } else {
       this.next();
-    }
+      } 
+      else {
+          if(Session.equals('firstLogin', true)) {
+             this.redirect('register');
+             Session.set('firstLogin', false);
+            } 
+          else
+           this.next();
+          }
    // this.next();
   }
 

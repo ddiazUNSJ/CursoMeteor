@@ -1,6 +1,6 @@
 LoginController = RouteController.extend({
   yieldTemplates: {
-    'Header': {to: 'Header'},
+    'HeadLog': {to: 'Header'},
     'Footer': {to: 'Footer'}
   },    
   

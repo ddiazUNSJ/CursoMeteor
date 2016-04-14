@@ -1,6 +1,6 @@
 RegisterController = RouteController.extend({
   yieldTemplates: {
-    'Header': {to: 'Header'},
+    'Headlog': {to: 'Header'},
     'Footer': {to: 'Footer'}
   },    
   

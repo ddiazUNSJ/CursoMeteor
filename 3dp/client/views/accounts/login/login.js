@@ -37,7 +37,7 @@ Template.Login.events({
      else
      {
        console.log('success!');
-   //    Session.set('userOk', true)
+       Session.set('userOk', true)
 //Router.go('overview') ;
 
      }
