@@ -31,7 +31,7 @@ if (! Meteor.user()  ) {  //usuario no logeado
         
     {
        var ver=this.lookupTemplate();
-       if (ver=="Errorlog" || ver=="Register" || ver=="Login" )
+       if (ver=="ErrorReg" ||ver=="Errorlog" || ver=="Register" || ver=="Login" )
         {
          this.render('HeadLog',{to: 'Header'});    
          this.render(ver);

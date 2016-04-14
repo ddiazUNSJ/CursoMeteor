@@ -19,9 +19,14 @@ Template.Register.events({
     
      Accounts.createUser({username:inputName, password:inputPassword}, function(err){
      if (err)
+     {
        console.log(err);
+       Router.go('ErrorReg');
+      }
      else
        console.log('success!');
+       Session.set('userOk', true)
+    //    Router.go("Overlog");
      
     //   var currentRoute = Router.current();
     //     Session.set('errorl', true);
