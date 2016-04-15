@@ -13,6 +13,7 @@ Template.Login.events({
     event.preventDefault();
     
     Meteor.logout();
+    Session.set('userOk', false);
     Router.go('/');
   },
   'click #register': function(event, template) {
@@ -37,7 +38,7 @@ Template.Login.events({
      else
      {
        console.log('success!');
-  
+  Router.go('overlog') ;
 //Router.go('overview') ;
 
      }

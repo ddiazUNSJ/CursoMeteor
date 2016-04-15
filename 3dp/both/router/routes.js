@@ -129,7 +129,7 @@ this.route('register', {path: '/accounts/register'});
   this.route('login', {path: '/accounts/login'});
   this.route('errorlog', {path: '/shared/errorlog'});
   this.route('signout', {path: '/signout'});
-  
+ this.route('overlog', {path: '/overlog'});
 });
 
 
