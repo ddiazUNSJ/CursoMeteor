@@ -17,7 +17,7 @@ Router._scrollToHash = function(hash) {
   }
 };
 
-
+/*
 
 beforeHooks = {
  isLoggedIn: function(){
@@ -72,10 +72,10 @@ if (! Meteor.user()  ) {  //usuario no logeado
 
 }
 
-};
+};*/
 //******************************************
 // Tienes que loguearte para acceder a la pagina
-/*
+
 beforeHooks = {
  isLoggedIn: function(){
 
@@ -86,14 +86,15 @@ if (! Meteor.user()  ) {
       this.render('HeadLog',{to: 'Header'}); // Muestra encabezado para Login
       var ver=this.lookupTemplate();
      
-       if (ver=="Errorlog" || ver=="Register" || ver=="Signout" )
-        {
+      if (ver=="ErrorReg" ||ver=="Errorlog" || ver=="Register" || ver=="Login" )
+      {
          this.render(ver);
           }
 
        else 
         {
-      this.render('Login');
+         this.render('overview');
+         this.next();    
          }
       this.render('Footer',{to: 'Footer'});
       Session.set('firstLogin', true);
@@ -112,7 +113,7 @@ if (! Meteor.user()  ) {
 }
 
 };
-*/
+
 
 
  Router.onBeforeAction(beforeHooks.isLoggedIn);
@@ -129,7 +130,7 @@ this.route('register', {path: '/accounts/register'});
   this.route('login', {path: '/accounts/login'});
   this.route('errorlog', {path: '/shared/errorlog'});
   this.route('signout', {path: '/signout'});
- this.route('overlog', {path: '/overlog'});
+ //this.route('overlog', {path: '/overlog'});
 });
 
 

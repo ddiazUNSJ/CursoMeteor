@@ -11,18 +11,36 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
+            {{#if currentUser}}    
+              <strong><a class="navbar-brand" href="/">{{currentUser.username}}</a></strong>
+            {{else}}
               <strong><a class="navbar-brand" href="/">3D PRINTING DAY</a></strong>
+            
+            {{/if}}  
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <div class="container">
-                <ul class="nav navbar-nav navbar-right">
-                 
-                    
-                  <li class="{{ activeIfTemplateIs 'about' }}"> <a href="{{pathFor 'overview' hash='about'}}"><span class='glyphicon glyphicon-user'></span> Acerca de</a></li>
-                  <li class="{{ activeIfTemplateIs 'meetup' }}"><a href="{{pathFor 'overview' hash='meetup'}}"><span class='glyphicon glyphicon-map-marker'></span>Donde</a></li>
-                  <li><a href="{{pathFor 'overview' hash='contact'}}"><span class='glyphicon glyphicon-envelope'></span> Pre-Inscripción</a></li>
-                  <li class="{{ activeIfTemplateIs 'register' }}"> <a href="{{pathFor 'login' }}"><span class=' glyphicon glyphicon-new-window'></span> Iniciar Sesion</a></li>
+               <ul class="nav navbar-nav navbar-right">
+                                  
+                   <li class="{{ activeIfTemplateIs 'about' }}"> <a href="{{pathFor 'overview' hash='about'}}">
+                       <span class='glyphicon glyphicon-user'></span> Acerca de</a>
+                   </li>
+                   <li class="{{ activeIfTemplateIs 'meetup' }}"><a href="{{pathFor 'overview' hash='meetup'}}">
+                       <span class='glyphicon glyphicon-map-marker'></span>Donde</a>
+                   </li>
+                   <li><a href="{{pathFor 'overview' hash='contact'}}">
+                       <span class='glyphicon glyphicon-envelope'></span> Pre-Inscripción</a>
+                   </li>
+                    {{#if currentUser}}  
+                     <li class="{{ activeIfTemplateIs 'register' }}"> <a href="{{pathFor 'signout' }}">
+                        <span class=' glyphicon glyphicon-new-window'></span> Cerrar Sesion</a>
+                     </li>
+                    {{else}}
+                     <li class="{{ activeIfTemplateIs 'register' }}"> <a href="{{pathFor 'login' }}">
+                       <span class=' glyphicon glyphicon-new-window'></span> Iniciar Sesion</a>
+                     </li>
+                    {{/if}}  
                                  
                 </ul>
               </div><!-- /.navbar-collapse -->
