@@ -93,7 +93,7 @@ if (! Meteor.user()  ) {
 
        else 
         {
-         this.render('overview');
+         this.render('Overview');
          this.next();    
          }
       this.render('Footer',{to: 'Footer'});

@@ -17,10 +17,13 @@ Meteor.methods({
 //
     var idUsuario =Accounts.createUser({
                 email: inscriFields.email,
-                profile.nombre:inscriFields.nombre,
-                profile.dni:inscriFields.dni,
-                profile.telefono:inscriFields.telefono,
-                profile.ocupacion:inscriFields.ocupacion,
+                   profile: {
+          
+       
+                nombre:inscriFields.nombre,
+                dni:inscriFields.dni,
+              telefono:inscriFields.telefono,
+               cupacion:inscriFields.ocupacion }
                       });
 
      console.log("Usuario Creado"); 
