@@ -1,4 +1,4 @@
-Template.InscriForm.events({
+inscriFormSchemaTemplate.InscriForm.events({
 });
 
 
