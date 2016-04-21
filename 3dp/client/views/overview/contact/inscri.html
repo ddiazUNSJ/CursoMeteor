@@ -1,7 +1,7 @@
 <template name="InscriForm">  
 <!--    Aqui le digo que use como esquema inscriFormSchema, ademas asocio el metodo send2Email al boton submit-->
 <!--    El metodo send2Email esta en el servidor, alli debo crear la cuenta del usuario con estos datos -->
-  {{#autoForm schema=InscriSchema  id="inscriForm" type="method" meteormethod="registrar" validation="submit" class=formCss   }}             
+  {{#autoForm schema=InscriSchema  id="preinscriForm" type="method" meteormethod="send2Email" validation="submit" class=formCss   }}             
     <fieldset>
 <!-- 
       <div class="form-group">

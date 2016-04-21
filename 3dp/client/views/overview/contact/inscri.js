@@ -1,7 +1,5 @@
-inscriFormSchemaTemplate.InscriForm.events({
-});
-
-
+Template.InscriForm.events()
+{};
 Template.InscriForm.helpers({
   /*
    * Example:
