@@ -2,11 +2,23 @@ Meteor.methods({
  
 
    isEmailExisting: function(emailToCheck) {
-      var count = Meteor.users.find({'email': emailToCheck}).count();
-      console.log("Found emails-" + count);
+     // var count = Meteor.users.find({'email': emailToCheck}).count();
+      var count = Meteor.users.find({ emails: { $elemMatch: { address: emailToCheck} } }).count();
+      console.log("Encontre " + count+ " emails");
       return count > 0;
    },
-
+    
+/*  
+Movi este metodo al cliente
+// Pregunta si hay tramite de cambio de password para el usuario actual
+  isTokenExist:function(tk) {
+     // var count = Meteor.users.find({'email': emailToCheck}).count();
+     // PARA CONSULTAR CON ROBOMONGO Meteor.users.find({"services.password.reset.token": "s9VsH-T4DHqY5pp_kf4QXS3q4UGEvItQWrK6aKeU6IE"}).count();
+      var count =  Meteor.users.find({"services.password.reset.token": tk}).count();
+      console.log("Hay  " + count+ " tramites abiertos");
+      return count > 0;
+   },
+*/
  
   'registrar': function (inscriFields) {
     check(inscriFields, Schema.InscriSchema);

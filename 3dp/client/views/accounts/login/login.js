@@ -16,11 +16,11 @@ Template.Login.events({
     Session.set('userOk', false);
     Router.go('/');
   },
-  'click #register': function(event, template) {
-    event.preventDefault();
-       
-    Router.go('register');
-  },
+//  'click #register': function(event, template) {
+//    event.preventDefault();
+//       
+//    Router.go('register');
+//  },
   
   'submit form': function(event, template) {
     event.preventDefault();
@@ -33,13 +33,13 @@ Template.Login.events({
    // Router.go('errorlog');
     if (err){
        console.log(err);
-        Router.go('errorlog');
+       Router.go('errorlog');
      }
      else
      {
        console.log('success!');
-  Router.go('overlog') ;
-//Router.go('overview') ;
+//  Router.go('overlog') ;
+       Router.go('overview') ;
 
      }
      Session.set('userOk', true)

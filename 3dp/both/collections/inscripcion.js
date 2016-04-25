@@ -3,8 +3,21 @@ Schema = {};
 
 // Adapatdo desde https://github.com/aldeed/meteor-collection2#attach-a-schema-to-meteorusers
 
-
-
+Schema.Login=new SimpleSchema({
+  
+    email: {
+          label: "Email",
+          type: String,
+          regEx: SimpleSchema.RegEx.Email,
+          max: 50, //Maximum allowed length of this field.
+      }, 
+    password:{
+        label: "Password",
+        type: String,
+        max: 50,
+        min: 3}
+});
+    
 Schema.InscriSchema = new SimpleSchema({
   
   /*
@@ -24,33 +37,38 @@ Schema.InscriSchema = new SimpleSchema({
     max: 8,
     min: 7
         }, 
+ // email: {
+ //       type: String,
+ //       regEx: SimpleSchema.RegEx.Email,
+ //       max: 50
+ // },
  email: {
-       type: String,
-       regEx: SimpleSchema.RegEx.Email,
-       max: 50
- },
-//  email: {
-//       label: "Email",
-//       type: String,
-//       regEx: SimpleSchema.RegEx.Email,
-//       max: 50, //Maximum allowed length of this field.
-//       custom: function() { //Custom method could be used to do a server side check, 
-//  //like below.
-////Here we’re making sure that this field is having a value and we want it to be      
-////validated on the client side only.
-//           if (Meteor.isClient && this.isSet) {
-//               console.log("verifica que el email es unico");
-//               Meteor.call("isEmailExisting", this.value, function (error, result) {
-//                   if (result) {
-//                       console.log("Email duplicado, este email ya esta registrado");   
-//                       UserProfile.simpleSchema().namedContext("userProfileForm")
-//                        .addInvalidKeys([{name: "email", type: "duplicateEmail"}]);
-//                   }
-//               });
-//           }
-//       }
-//   },       
-//  
+      label: "Email",
+      type: String,
+      regEx: SimpleSchema.RegEx.Email,
+      max: 50, //Maximum allowed length of this field.
+      custom: function() { //Custom method could be used to do a server side check, 
+ //like below.
+//Here we’re making sure that this field is having a value and we want it to be      
+//validated on the client side only.
+          if (Meteor.isClient && this.isSet) {
+              console.log("verifica que el email es unico ");
+              console.log(this.value);
+              Meteor.call("isEmailExisting", this.value, function (error, result) {
+                 if (result) {
+                      console.log("Email duplicado, este email ya esta registrado");   
+                   //  Meteor.users.simpleSchema().namedContext("inscriForm").addInvalidKeys([{name: "email", type: "notUnique"}]);
+   
+              //         InscriSchema.simpleSchema().
+                       Schema.InscriSchema.namedContext("inscriForm").addInvalidKeys([{name: "email", type: "duplicateEmail"}]);
+                   //       Schema.InscriSchema.simpleSchema().namedContext("inscriForm").addInvalidKeys([{name: "email", type: "duplicateEmail"}]);
+                       // return "notUnique";
+                  }
+              });
+          }
+      }
+  },       
+ 
 
   telefono: {
     type: String,
@@ -86,7 +104,7 @@ Schema.InscriSchema .messages({
   ],
      keyNotInSchema: "[key] no esta permitido por el esquema"
  
-})
+});
 
 
 /*
@@ -111,3 +129,38 @@ if (Meteor.isServer) {
  }
 
 */
+
+if (Meteor.isServer) {
+  Meteor.startup(function () {
+    Meteor.publish('enrolledUser', function(token) {
+     return Meteor.users.find({"services.password.reset.token": token});
+    });
+    Accounts.urls.enrollAccount = function (token) {
+    return Meteor.absoluteUrl('accounts/enroll/' + token);
+    };
+       // Configurar templates de email
+      Accounts.emailTemplates.siteName = "3DPrintingDay";
+      
+      Accounts.emailTemplates.from = "Inscripciones taller 3D <info@3dprintingday.tk>";
+      Accounts.emailTemplates.enrollAccount.subject = function (user) {
+          return "Hola "+ user.profile.name+ " Le damos la bienvenida a nuestro primer taller de impresion  3D " ;
+      };
+      Accounts.emailTemplates.enrollAccount.text = function (user, url) {
+       return "En breve nos estaremos comunicandonos con usted para confirmar su participacion."
+       +"Por motivos administrativos le hemos creado una cuenta en nuestro sitio web."
+       +"para activar la misma, simplemente haga click en el link que se muestra a continuación"
+       + url;
+      };
+        });
+ }
+
+Meteor.methods({
+// Pregunta si hay tramite de cambio de password para el usuario actual
+  isTokenExist:function(tk) {
+     // var count = Meteor.users.find({'email': emailToCheck}).count();
+     // PARA CONSULTAR CON ROBOMONGO Meteor.users.find({"services.password.reset.token": "s9VsH-T4DHqY5pp_kf4QXS3q4UGEvItQWrK6aKeU6IE"}).count();
+      var count =  Meteor.users.find({"services.password.reset.token": tk}).count();
+      console.log("Hay  " + count+ " tramites abiertos");
+      return count > 0;
+   }
+})

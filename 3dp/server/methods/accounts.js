@@ -1,6 +1,6 @@
 Accounts.config({
   sendVerificationEmail : true,
-   forbidClientAccountCreation: false
+   forbidClientAccountCreation: true
 });
 
 /*Accounts.onCreateUser(function(options, user) {

@@ -11,8 +11,10 @@ OverviewController = RouteController.extend({
   },
 
   action: function () {
-    this.render();
-  },
+       var hashValue = this.params.hash;
+       var _idValue = this.params._id;
+      this.render();
+    },
 
   onBeforeAction: function() {
      Session.setDefault('contactFormButtonMessage', 'Send Message');
