@@ -41,7 +41,7 @@ if (Meteor.isServer) {
   });
  });
 }
- //Meteor.subscribe("posts");
+ 
 
 
 

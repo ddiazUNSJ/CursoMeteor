@@ -1,6 +1,6 @@
 Meteor.methods({
   'sendEmail': function (contactFields) {
-    check(contactFields, Schemas.ContactSchema);
+    check(contactFields, Schema.ContactSchema);
 
     this.unblock();
 
