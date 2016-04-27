@@ -1,7 +1,7 @@
 if (Meteor.isClient) {
 
 AutoForm.hooks({
-    enrollForm:
+    enrollF:
     {
        onSubmit: function(insertDoc, updateDoc, currentDoc) {
                console.log('usuario activado!');
