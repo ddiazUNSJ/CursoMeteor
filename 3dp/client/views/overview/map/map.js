@@ -135,28 +135,30 @@ var position = new google.maps.LatLng(-31.541135, -68.576343);
   var contentString = '<div id="content">'+
       '<div id="siteNotice">'+
       '</div>'+
-      '<h2 id="firstHeading" class="firstHeading">Daniel Diaz</h2>'+
+      '<h2 id="firstHeading" class="firstHeading">Laboratorio de Informatica Aplicada al la Innovación</h2>'+
       '<div id="bodyContent">'+
       '<p><b>Country:</b> Argentina</p>'+
-      '<p><b>City:</b> 5411 Santa Lucia</p>'+
-      '<p><b>Street:</b> Barrio El Sauzal</p>'+
+      '<p><b>City:</b> 5400 Rivadavia</p>'+
+      '<p><b>Street:</b> Cereceto y Meglioli</p>'+
     //  https://www.google.com.ar/maps/@-31.5404572,-68.4404281,241m/data=!3m1!1e3?hl=es-419
      '<p><a href="//www.google.com.ar/maps/@-31.5404572,-68.4404281,241m/data=!3m1!1e3?hl=es-419" target="_blank">View on Google Maps</a></p>' +
  //        '<p><a href="https://www.google.de/maps/place/Zirkusstra%C3%9Fe+6,+01069+Dresden/@51.04876,13.74931,17z/data=!3m1!4b1!4m2!3m1!1s0x4709cf5b043a92dd:0x56738bbe6d8f3aec" target="_blank">View on Google Maps</a></p>' +
  
       '</div>';
 
-
+//'"http://maps.marnoto.com/en/5wayscustomizeinfowindow/images/vistalegre.jpg"
   // InfoWindow content
+ // var imagenes=Meteor.absoluteUrl('public/images/laboratorio.jpg') ;
+ 
   contentString = '<div id="iw-container">' +
-                    '<div class="iw-title">Daniel Diaz House</div>' +
+                    '<div class="iw-title">Laboratorio de Informática Aplicada a la Innovación</div>' +
                     '<div class="iw-content">' +
-                      '<div class="iw-subTitle">History</div>' +
-                      '<img src="http://maps.marnoto.com/en/5wayscustomizeinfowindow/images/vistalegre.jpg" alt="Porcelain Factory of Vista Alegre" height="115" width="83">' +
-                      '<p>Founded in 1824, the Porcelain Factory of Vista Alegre was the first industrial unit dedicated to porcelain production in Portugal. For the foundation and success of this risky industrial development was crucial the spirit of persistence of its founder, José Ferreira Pinto Basto. Leading figure in Portuguese society of the nineteenth century farm owner, daring dealer, wisely incorporated the liberal ideas of the century, having become "the first example of free enterprise" in Portugal.</p>' +
-                      '<div class="iw-subTitle">Contacts</div>' +
-                      '<p>VISTA ALEGRE ATLANTIS, SA<br>3830-292 Ílhavo - Portugal<br>'+
-                      '<br>Phone. +351 234 320 600<br>e-mail: geral@vaa.pt<br>www: www.myvistaalegre.com</p>'+
+                      '<div class="iw-subTitle">Historia</div>' +
+                      '<img src="/images/laboratorio.jpg" alt="Vista exterior del laboratorio de informática aplicada a la innovación" height="115" width="83">' +
+                      '<p>El Laboratorio fue creado en 2015, pertenece al Instituto de Informática de la Facultad de Ciencias Exactas, Fisicas y Naturales de la Universidad Nacional de San Juan. </p>' +
+                      '<div class="iw-subTitle">Contactos</div>' +
+                      '<p>Complejo Universitario Islas Malvinas<br> Cereceto y Megliol- Rivadavia - San Juan Portugal<br>'+
+                      '<br>Phone. +54 264 4265101<br>e-mail: yddiaz@gmail.com <br>www: www.idei.unsj.edu.ar/labinno.com</p>'+
                     '</div>' +
                     '<div class="iw-bottom-gradient"></div>' +
                   '</div>';    

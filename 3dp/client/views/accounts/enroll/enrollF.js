@@ -1,6 +1,6 @@
-Template.Login2Form.events()
+Template.EnrollForm.events()
 {};
-Template.Login2Form.helpers({
+Template.EnrollForm.helpers({
   /*
    * Example:
    *  items: function () {
@@ -14,8 +14,8 @@ Template.Login2Form.helpers({
       return "";
     }
   },
-    Login2FormSchema: function() {
-    return Schema.Login;
+    enrollFSchema: function() {
+    return Schema.GimePassword;
   },
     
     
@@ -24,12 +24,12 @@ Template.Login2Form.helpers({
 /*****************************************************************************/
 /* Contact: Lifecycle Hooks */
 /*****************************************************************************/
-Template.Login2Form.created = function () { 
+Template.EnrollForm.created = function () { 
 };
 
-Template.Login2Form.rendered = function () {
+Template.EnrollForm.rendered = function () {
 };
 
-Template.Login2Form.destroyed = function () {
+Template.EnrollForm.destroyed = function () {
 };
 

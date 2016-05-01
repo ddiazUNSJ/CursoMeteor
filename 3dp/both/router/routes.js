@@ -76,7 +76,7 @@ if (! Meteor.user()  ) {  //usuario no logeado
        //   this.render('HeadLog',{to: 'Header'});    
        //   this.render(ver);
        // }
-       if (ver=="ErrorReg" ||ver=="Errorlog" || ver=="Register" || ver=="Login"|| ver=="Errorenroll"  )
+       if (ver=="ErrorReg" ||ver=="Errorlog" || ver=="Register" || ver=="Login"|| ver=="Errorenroll"  || ver=="Resetear"  )
         {
          this.render('HeadLog',{to: 'Header'});    
          this.render(ver);
@@ -182,8 +182,8 @@ Router.map(function () {
   this.route('overlog', {path: '/overlog'});
 //  this.route('enroll', {path: '/accounts/enroll/:token'});
   this.route('errorenroll', {path: '/shared/errorenrroll'});
-this.route('enroll', {path: '/accounts/enroll/:token'})
-
+this.route('enroll', {path: '/accounts/enroll/:token'});
+ this.route('resetear', {path: '/accounts/resetear'});
 });
 
 

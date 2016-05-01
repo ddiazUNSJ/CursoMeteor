@@ -9,13 +9,14 @@ Template.Enroll.events({
    *
    *  }
    */
-  'click #logout': function(event, template) {
+  /*
+    'click #logout': function(event, template) {
     event.preventDefault();
     
     Meteor.logout();
-    Session.set('userOk', false);
     Router.go('/');
-  },
+  }
+    
   'click #register': function(event, template) {
     event.preventDefault();
        
@@ -45,7 +46,8 @@ Template.Enroll.events({
       Session.set('userOk', true)
        });
     
-    }  
+    } 
+    */
 
 
 });

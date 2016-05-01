@@ -22,7 +22,11 @@ Template.Header.helpers({
   activeIfTemplateIs: function (template) {
     var currentRoute = Router.current();
     return currentRoute && template === currentRoute.lookupTemplate() ? 'active' : '';
-  }  
+  } , 
+  nombre: function(){
+    var nombre= Meteor.user().profile.nombre;
+      return nombre;
+    }
 });
 
 

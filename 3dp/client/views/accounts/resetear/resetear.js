@@ -1,35 +1,34 @@
-
 /*****************************************************************************/
-/* ErrorLog: Event Handlers and Helpersss .js*/
+/* About: Event Handlers and Helpersss .js*/
 /*****************************************************************************/
- /*Template.ErrorLog.events({
- 
+Template.Resetear.events({
+  /*
    * Example:
    *  'click .selector': function (e, tmpl) {
    *
    *  }
-   
-});*/
+   */ 
+});
 
-// Template.ErrorLog.helpers({
-  
-   
-//      // msgError: function () {
-//      //   return Session.get('msgError');
-//      // }
-   
-// });
+Template.Resetear.helpers({
+  /*
+   * Example:
+   *  items: function () {
+   *    return Items.find();
+   *  }
+   */
+});
 
 /*****************************************************************************/
-/* ErrorLog: Lifecycle Hooks */
+/* Resetear: Lifecycle Hooks */
 /*****************************************************************************/
-/*Template.ErrorLog.created = function () {
+Template.Resetear.created = function () {
 };
 
-Template.ErrorLog.rendered = function () {
+Template.Resetear.rendered = function () {
 };
 
-Template.ErrorLog.destroyed = function () {
+Template.Resetear.destroyed = function () {
 };
-*/
+
 

@@ -8,7 +8,7 @@ Template.Login.events({
    *  'click .selector': function (e, tmpl) {
    *
    *  }
-   */
+   
   'click #logout': function(event, template) {
     event.preventDefault();
     
@@ -22,6 +22,7 @@ Template.Login.events({
 //    Router.go('register');
 //  },
   
+  /*
   'submit form': function(event, template) {
     event.preventDefault();
     
@@ -47,6 +48,7 @@ Template.Login.events({
     });
     
   }  
+  */
 
 
 });

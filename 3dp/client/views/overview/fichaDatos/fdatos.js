@@ -1,6 +1,6 @@
-Template.Login2Form.events()
+Template.DatosForm.events()
 {};
-Template.Login2Form.helpers({
+Template.DatosForm.helpers({
   /*
    * Example:
    *  items: function () {
@@ -14,8 +14,8 @@ Template.Login2Form.helpers({
       return "";
     }
   },
-    Login2FormSchema: function() {
-    return Schema.Login;
+    DatosFormSchema: function() {
+    return Schema.InscriViewSchema;
   },
     
     
@@ -24,12 +24,12 @@ Template.Login2Form.helpers({
 /*****************************************************************************/
 /* Contact: Lifecycle Hooks */
 /*****************************************************************************/
-Template.Login2Form.created = function () { 
+Template.DatosForm.created = function () { 
 };
 
-Template.Login2Form.rendered = function () {
+Template.DatosForm.rendered = function () {
 };
 
-Template.Login2Form.destroyed = function () {
+Template.DatosForm.destroyed = function () {
 };
 

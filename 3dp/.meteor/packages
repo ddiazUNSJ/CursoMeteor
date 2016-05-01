@@ -10,9 +10,10 @@ less
 nemo64:bootstrap
 jquery-waypoints
 email
-chaosbohne:simplecontactform
 accounts-password
 accounts-ui
 aldeed:simple-schema
 aldeed:collection2
 http
+aldeed:autoform
+patrickml:swal
