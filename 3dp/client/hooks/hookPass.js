@@ -91,7 +91,7 @@
 AutoForm.hooks({
 
 	datosForm:{
- before: {
+   before: {
     // Replace `formType` with the form `type` attribute to which this hook applies
     normal: function(doc) {
       // Potentially alter the doc
@@ -117,9 +117,10 @@ AutoForm.hooks({
       //this.result(doc); (asynchronous)
       //this.result(false); (asynchronous, cancel)
        
-  },
+     }
+  }
 
-  },
+},
 
   login2Form: {
        onSubmit: function(insertDoc, updateDoc, currentDoc) {

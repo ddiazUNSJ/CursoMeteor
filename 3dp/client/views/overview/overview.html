@@ -5,7 +5,13 @@
     {{> About}}
     {{> Meetup}}
     {{> Map}}
-    {{> Contact}}
+    {{#if currentUser}}    
+       {{> Fichadatos}}
+    {{else}}
+       {{> Contact}}
+    {{/if}}  
+    {{currentUser}}    
+   
     {{> Other}}
    </div>
 </template>
