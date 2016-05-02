@@ -231,13 +231,6 @@ Schema.InscriViewSchema = new SimpleSchema({
     min: 7
         }, 
  
-  email: {
-      label: "Email",
-      type: String,
-      regEx: SimpleSchema.RegEx.Email,
-      max: 50, //Maximum allowed length of this field.
-      autoform: { disabled: true }
-     },       
   telefono: {
     type: String,
     max: 15,
@@ -252,6 +245,58 @@ Schema.InscriViewSchema = new SimpleSchema({
    
 });
 
+
+
+
+//adaptado desde https://github.com/aldeed/meteor-collection2
+Schema.User = new SimpleSchema({
+    username: {
+        type: String,
+        // For accounts-password, either emails or username is required, but not both. It is OK to make this
+        // optional here because the accounts-password package does its own validation.
+        // Third-party login packages may not require either. Adjust this schema as necessary for your usage.
+        optional: true
+    },
+    emails: {
+        type: Array,
+        // For accounts-password, either emails or username is required, but not both. It is OK to make this
+        // optional here because the accounts-password package does its own validation.
+        // Third-party login packages may not require either. Adjust this schema as necessary for your usage.
+        optional: true
+    },
+    "emails.$": {
+        type: Object
+    },
+    "emails.$.address": {
+        type: String,
+        regEx: SimpleSchema.RegEx.Email
+    },
+    "emails.$.verified": {
+        type: Boolean
+    },
+    
+    createdAt: {
+        type: Date
+    },
+    profile: {
+        type:Schema.InscriViewSchema,
+        optional: true
+    },
+    // Make sure this services field is in your schema if you're using any of the accounts packages
+    services: {
+        type: Object,
+        optional: true,
+        blackbox: true
+    },
+    
+    // In order to avoid an 'Exception in setInterval callback' from Meteor
+    heartbeat: {
+        type: Date,
+        optional: true
+    }
+});
+
+Meteor.users.attachSchema(Schema.User);
 /*
 // base de datos para preinscriptos
 

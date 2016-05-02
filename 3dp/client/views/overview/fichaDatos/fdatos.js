@@ -15,7 +15,7 @@ Template.DatosForm.helpers({
     }
   },
     DatosFormSchema: function() {
-    return Schema.InscriViewSchema;
+    return Schema.User;// Schema.InscriViewSchema;
   },
     
     

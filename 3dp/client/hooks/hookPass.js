@@ -95,6 +95,7 @@ AutoForm.hooks({
     // Replace `formType` with the form `type` attribute to which this hook applies
     normal: function(doc) {
       // Potentially alter the doc
+      
       var usuario= Meteor.user();
       if (usuario!==null){
          doc.nombre = 'usuario.profile.nombre';
@@ -116,7 +117,7 @@ AutoForm.hooks({
       //return false; (synchronous, cancel)
       //this.result(doc); (asynchronous)
       //this.result(false); (asynchronous, cancel)
-       
+       return doc;
      }
   }
 
