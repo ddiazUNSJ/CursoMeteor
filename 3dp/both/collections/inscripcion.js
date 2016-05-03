@@ -355,6 +355,8 @@ AutoForm.hooks({
 }*/
 if (Meteor.isServer) {
   Meteor.startup(function () {
+      
+      
     Meteor.publish('enrolledUser', function(token) {
      return Meteor.users.find({"services.password.reset.token": token});
     });
@@ -368,6 +370,15 @@ if (Meteor.isServer) {
     Accounts.urls.enrollAccount = function (token) {
     return Meteor.absoluteUrl('accounts/enroll/' + token);
     };
+      
+   // Permitir modificar  no hace falta pues todos los datos estan en profile     
+//    Meteor.users.allow({
+//       update: function (userId, user) 
+//                   {     
+//                     return ( userId && userId === user._id); 
+//                    }
+//    });  
+      
         }); // fin startup
  };
 
