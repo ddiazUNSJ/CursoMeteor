@@ -1,4 +1,5 @@
 
+<!--
 <template name="Fichadatos">
   <section id="contact" class="section-padding">
     <div class="container">
@@ -12,4 +13,19 @@
       </div>
   </section>
 </template>
+-->
 
+<template name="Fichadatos">
+        {{#autoForm id="UserProfileEdit" collection="Meteor.users"  doc=currentUser type="update"}}
+<!--                {{> afQuickField name="username"}}-->
+                {{> afQuickField name="profile.firstName"}}
+                {{> afQuickField name="profile.lastName"}}
+                {{> afQuickField name="profile.bio" rows="6"}}
+                {{> afQuickField name="profile.website"}}
+                {{#unless autoSaveMode}}
+                <div class="form-group">
+                        <button type="submit" class="btn btn-primary" disabled="{{disableButtons}}">Submit</button>
+                </div>
+                {{/unless}}
+        {{/autoForm}}
+</template>
