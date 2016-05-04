@@ -102,6 +102,7 @@ Meteor.methods({
        throw new Meteor.Error("No existe usuario",   "No hay usuario con el email" + resetPassFields.email);
 
   },
+    
   'send2Email': function (inscriFields) {
     check(inscriFields, Schema.InscriSchema);
 

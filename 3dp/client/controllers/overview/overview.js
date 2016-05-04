@@ -17,10 +17,10 @@ OverviewController = RouteController.extend({
     },
 
   onBeforeAction: function() {
-     Session.setDefault('contactFormButtonMessage', 'Send Message');
-     Session.setDefault('contactNameError', null);
-     Session.setDefault('contactEmailError', null);
-     Session.setDefault('contactMessageError', null);   
+//     Session.setDefault('contactFormButtonMessage', 'Send Message');
+//     Session.setDefault('contactNameError', null);
+//     Session.setDefault('contactEmailError', null);
+//     Session.setDefault('contactMessageError', null);   
      this.next();
   },
   

@@ -90,36 +90,48 @@
 
 AutoForm.hooks({
 
-	datosForm:{
-   before: {
-    // Replace `formType` with the form `type` attribute to which this hook applies
-    normal: function(doc) {
-      // Potentially alter the doc
-      
-      var usuario= Meteor.user();
-      if (usuario!==null){
-         doc.nombre = 'usuario.profile.nombre';
-         doc.dni='usuario.profile.dni';
-         doc.email='dato no disponible';
-         doc.telefono='usuario.profile.telefono';
-         doc.ocupacion='usuario.profile.ocupacion';
-         }
-       else  
-         {
-         doc.nombre = 'dato no disponible';
-         doc.dni='dato no disponible';
-         doc.email='dato no disponible';
-         doc.telefono='dato no disponible';
-         doc.ocupacion='dato no disponible';
-         }
-      // Then return it or pass it to this.result()
-      //return doc; (synchronous)
-      //return false; (synchronous, cancel)
-      //this.result(doc); (asynchronous)
-      //this.result(false); (asynchronous, cancel)
-       return doc;
-     }
-  }
+  datosForm:{
+//     before: {
+//      // Replace `formType` with the form `type` attribute to which this hook applies
+//      update: function(doc) {
+//      // Potentially alter the doc
+//      
+//      var usuario= Meteor.users.findOne(doc);
+//          
+//      if (usuario!==null){
+//         doc.nombre = 'usuario.profile.nombre';
+//         doc.dni='usuario.profile.dni';
+//         doc.email='dato no disponible';
+//         doc.telefono='usuario.profile.telefono';
+//         doc.ocupacion='dato no disponible';
+//         }
+//       else  
+//         {
+//         doc.nombre = 'dato no disponible';
+//         doc.dni='dato no disponible';
+//         doc.email='dato no disponible';
+//         doc.telefono='dato no disponible';
+//         doc.ocupacion='dato no disponible';
+//         }
+//      // Then return it or pass it to this.result()
+//      //return doc; (synchronous)
+//      //return false; (synchronous, cancel)
+//      //this.result(doc); (asynchronous)
+//      //this.result(false); (asynchronous, cancel)
+//       return usuario;
+//      }
+//    },
+   // Called when any submit operation succeeds
+   onSuccess: function(update, result) {
+   	 console.log('ok todo bien');
+     sweetAlert('Datos Actualizados !!!', ', Haga click para continuar',  'success');
+    // Router.go('overview') ;  
+       Router.current().render('overview').data();
+     //  Router.go('overview', {hash: 'about'});
+   //    Router.go('overview') ;  
+   //    Router.go('overview') ;  
+       
+   }
 
 },
 

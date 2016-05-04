@@ -1,8 +1,10 @@
 <template name="DatosForm">  
-     {{#autoForm id="UserProfileEdit" collection="Meteor.users"  doc=currentUser type="update" validation="submit" class=formCss}}
-<!--
+<!--     {{#autoForm id="UserProfileEdit" collection="Meteor.users"  doc=currentUser type="update" validation="submit" class=formCss}}-->
+    {{#autoForm collection="Meteor.users"  id="datosForm" doc=currentUser type="update" validation="submit"  class=formCss}}
+<!--    {{#autoForm schema=DatosFormSchema id="datosForm" doc=currentUser type="update" validation="submit" class=formCss}}
+
   {{#autoForm collection="Meteor.users"  id="datosForm" type="normal" validation="submit" class=formCss   }}  
-  {{#autoForm schema=DatosFormSchema  id="datosForm" type="normal" validation="submit" class=formCss   }}             
+  {{#autoForm   id="datosForm" type="normal" validation="submit" class=formCss   }}             
 -->
     <fieldset>
   
