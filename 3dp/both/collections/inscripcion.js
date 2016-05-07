@@ -297,6 +297,15 @@ Schema.User = new SimpleSchema({
 });
 
 Meteor.users.attachSchema(Schema.User);
+
+if (Meteor.isClient) {
+Meteor.startup(function(){
+
+ 
+ Session.set("preinscriOk", "false");
+});
+}
+
 /*
 // base de datos para preinscriptos
 

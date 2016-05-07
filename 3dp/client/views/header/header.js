@@ -3,7 +3,16 @@
 /* Header: Event Handlers and Helpersss .js*/
 /*****************************************************************************/
 Template.Header.events({
-  /*
+    
+  'click .dale': function(){
+    console.log("You clicked en cerrar sesion");
+    Meteor.logout();
+    
+      Router.go('/#contact');
+     // Router.current().render('overview').data();
+     
+}
+    /*
    * Example:
    *  'click .selector': function (e, tmpl) {
    *

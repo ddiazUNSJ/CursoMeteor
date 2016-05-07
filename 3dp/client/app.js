@@ -12,7 +12,4 @@ _.each(App.helpers, function (helper, key) {
 });
 
 
-Meteor.startup(function() {
-  //AceEditor
-  editor = null;
-});
+

@@ -12,7 +12,8 @@ Template.Overview.events({
 });
 
 Template.Overview.helpers({
-  /*
+ 
+    /*
    * Example:
    *  items: function () {
    *    return Items.find();

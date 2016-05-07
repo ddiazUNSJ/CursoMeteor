@@ -43,7 +43,14 @@
                      <li class="{{ activeIfTemplateIs 'signout' }}"> <a href="{{pathFor 'signout' }}">
                         <span class=' glyphicon glyphicon-new-window'></span> Cerrar Sesion</a>
                      </li>
-                    {{else}}
+<!--
+                     <li class="{{ activeIfTemplateIs 'signout' }}"><li class="dale">
+                        <span class=' glyphicon glyphicon-new-window'></span> Cerrar Sesion</li>
+                     </li>
+                   
+-->
+                  
+                  {{else}}
                       <li><a href="{{pathFor 'overview' hash='contact'}}">
                        <span class='glyphicon glyphicon-envelope'></span> Pre-Inscripción</a>
                       </li>

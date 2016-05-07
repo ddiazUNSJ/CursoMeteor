@@ -24,7 +24,7 @@ Meteor.methods({
       return count > 0;
    },*/
  
-  'registrar': function (inscriFields) {
+  'preinscribe': function (inscriFields) {
     check(inscriFields, Schema.InscriSchema);
 
 //    Pinscri.insert({nombre:inscriFields.nombre ,dni:inscriFields.dni,email:inscriFields.email, telefono:inscriFields.telefono,ocupacion:inscriFields.ocupacion })

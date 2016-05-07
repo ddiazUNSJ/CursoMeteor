@@ -89,7 +89,19 @@
 // };
 
 AutoForm.hooks({
-
+ inscriForm:{
+     onSuccess: function(update, result) {
+   	 console.log('ok con pre-inscripcion');
+     sweetAlert('Pre-inscripcion realizada!!', ', Haga click para continuar',  'success');
+         Session.set('preinscriOk', 'true');
+    // Router.go('overview') ;  
+       Router.current().render('overview').data();
+     //  Router.go('overview', {hash: 'about'});
+   //    Router.go('overview') ;  
+   //    Router.go('overview') ;  
+       
+       }  
+     },
   datosForm:{
 //     before: {
 //      // Replace `formType` with the form `type` attribute to which this hook applies

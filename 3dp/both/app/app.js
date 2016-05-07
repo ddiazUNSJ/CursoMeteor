@@ -67,7 +67,10 @@ EmailConfig = {};
 var EmailConfig;
 
 Meteor.startup(function() {
-  EmailConfig = {
+ 
+
+    
+    EmailConfig = {
     settings: {
       receiver: Meteor.settings && Meteor.settings.private && Meteor.settings.private.email && Meteor.settings.private.email.receiver || ''
     },
