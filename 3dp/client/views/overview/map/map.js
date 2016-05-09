@@ -98,6 +98,7 @@ Template.Map.rendered = function () {
 //-31.541135, -68.576343
 //  var position = new google.maps.LatLng(51.048674, 13.749437);
 var position = new google.maps.LatLng(-31.541135, -68.576343);
+var positionM = new google.maps.LatLng(-31.537371, -68.574811);
 
 
   
@@ -113,7 +114,7 @@ var position = new google.maps.LatLng(-31.541135, -68.576343);
     overviewMapControl: false,
     mapTypeId: google.maps.MapTypeId.ROADMAP,
     styles: gmapStyles,
-    center: position
+    center: positionM
   };   
 
   map = new google.maps.Map(canvas, mapOptions);
@@ -129,7 +130,7 @@ var position = new google.maps.LatLng(-31.541135, -68.576343);
                                              null,
                                              null,
                                              null,
-                                             new google.maps.Size(31, 50)
+                                             new google.maps.Size(31, 40)
       );  
 
   var contentString = '<div id="content">'+
@@ -157,8 +158,8 @@ var position = new google.maps.LatLng(-31.541135, -68.576343);
                       '<img src="/images/laboratorio.jpg" alt="Vista exterior del laboratorio de informática aplicada a la innovación" height="115" width="83">' +
                       '<p>El Laboratorio fue creado en 2015, pertenece al Instituto de Informática de la Facultad de Ciencias Exactas, Fisicas y Naturales de la Universidad Nacional de San Juan. </p>' +
                       '<div class="iw-subTitle">Contactos</div>' +
-                      '<p>Complejo Universitario Islas Malvinas<br> Cereceto y Megliol- Rivadavia - San Juan Portugal<br>'+
-                      '<br>Phone. +54 264 4265101<br>e-mail: yddiaz@gmail.com <br>www: www.idei.unsj.edu.ar/labinno.com</p>'+
+                      '<p>Complejo Universitario Islas Malvinas<br> Cereceto y Megliol- Rivadavia - San Juan Argentina<br>'+
+                      '<br>Phone. +54 264 4265101<br> e-mail: yddiaz@gmail.com </p>'+
                     '</div>' +
                     '<div class="iw-bottom-gradient"></div>' +
                   '</div>';    
