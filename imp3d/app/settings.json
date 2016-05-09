@@ -1,0 +1,14 @@
+
+{
+  "private": {
+    "email": {
+      "username": "tcrearinnovar",
+      "password": "taller22y23",
+      "server" : "smtp.gmail.com",
+      "port" : "587",
+      "receiver":"yddiaz@gmail.com"
+    }
+  }
+}
+
+
