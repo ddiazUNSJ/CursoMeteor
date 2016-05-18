@@ -45,7 +45,7 @@ Meteor.methods({
        // Configurar templates de email
       Accounts.emailTemplates.siteName = "3DPrintingDay";
       
-      Accounts.emailTemplates.from = "Inscripciones taller 3D <info@3dprintingday.tk>";
+      Accounts.emailTemplates.from = "Inscripciones taller 3D <preinscripciones@3dprintingday.tk>";
       Accounts.emailTemplates.enrollAccount.subject = function (user) {
           return "Hola "+ user.profile.nombre+ " le damos la bienvenida a nuestro primer taller de impresion  3D " ;
       };
@@ -85,7 +85,7 @@ Meteor.methods({
          
           Accounts.emailTemplates.siteName = "3DPrintingDay";
           
-          Accounts.emailTemplates.from = "Taller 3D <info@3dprintingday.tk>";
+          Accounts.emailTemplates.from = "Taller 3D <preinscripciones@3dprintingday.tk>";
           Accounts.emailTemplates.resetPassword.subject = function (usuario) {
               return "Solicitud de cambio de password ";
            };

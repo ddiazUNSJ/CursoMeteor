@@ -2,7 +2,7 @@
 {
   "private": {
     "email": {
-      "username": "preinscripciones",
+      "username": "preinscripciones@3dprintingday.tk",
       "password": "taller3d",
       "server" : "smtp.mailgun.org",
       "port" : "587",
