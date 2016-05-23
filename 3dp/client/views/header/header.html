@@ -39,6 +39,12 @@
                       <li><a href="{{pathFor 'overview' hash='contact'}}">
                        <span class='glyphicon glyphicon-envelope'></span> Datos Usuario</a>
                       </li>
+           
+                      {{#if isInRole 'admin'}}
+                      <li><a href="{{pathFor 'listp' }}">
+                       <span class='glyphicon glyphicon-envelope'></span> Listar PreInscriptos</a>
+                      </li>
+                       {{/if}}
 
                      <li class="{{ activeIfTemplateIs 'signout' }}"> <a href="{{pathFor 'signout' }}">
                         <span class=' glyphicon glyphicon-new-window'></span> Cerrar Sesion</a>

@@ -287,6 +287,31 @@ Schema.User = new SimpleSchema({
         type: Object,
         optional: true,
         blackbox: true
+    },// Make sure this services field is in your schema if you're using any of the accounts packages
+    services: {
+        type: Object,
+        optional: true,
+        blackbox: true
+    },
+    // Add `roles` to your schema if you use the meteor-roles package.
+    // Option 1: Object type
+    // If you specify that type as Object, you must also specify the
+    // `Roles.GLOBAL_GROUP` group whenever you add a user to a role.
+    // Example:
+    // Roles.addUsersToRoles(userId, ["admin"], Roles.GLOBAL_GROUP);
+    // You can't mix and match adding with and without a group since
+    // you will fail validation in some cases.
+    roles: {
+        type: Object,
+        optional: true,
+        blackbox: true
+    },
+    // Option 2: [String] type
+    // If you are sure you will never need to use role groups, then
+    // you can specify [String] as the type
+    roles: {
+        type: [String],
+        optional: true
     },
     
     // In order to avoid an 'Exception in setInterval callback' from Meteor
@@ -379,6 +404,20 @@ if (Meteor.isServer) {
     Accounts.urls.enrollAccount = function (token) {
     return Meteor.absoluteUrl('accounts/enroll/' + token);
     };
+
+  // publicar datos del user dependiendo de si el usuario e administrador 
+    Meteor.publish("users", function () {
+      console.log('entrando en publicacion de  usuarios ', this.userId);
+      var user = Meteor.users.findOne({_id:this.userId});
+
+     if (Roles.userIsInRole(user, ['admin','manage-users'])) {
+       console.log('publicando usuarios ', this.userId)
+       return Meteor.users.find({}, {fields: {emails: 1, profile: 1, roles: 1}});
+     } 
+     this.stop();
+     return;
+    });
+
       
    // Permitir modificar  no hace falta pues todos los datos estan en profile     
 //    Meteor.users.allow({

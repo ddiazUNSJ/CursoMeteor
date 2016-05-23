@@ -5,8 +5,9 @@
       "host": "3dprintingday.tk",
       "username": "root",
       "password": "123456789a"
-      // or pem file (ssh based authentication)
-      //"pem": "~/.ssh/id_rsa"
+      // // or pem file (ssh based authentication)
+      // "username":"user3d",
+      // "pem": "~/.ssh/id_rsa"
     }
   ],
 

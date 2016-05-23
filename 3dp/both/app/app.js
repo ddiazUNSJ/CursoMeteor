@@ -96,6 +96,49 @@ Meteor.startup(function() {
        EmailConfig.hasValidStringProperty(email.port)
       ) {    
       process.env.MAIL_URL = 'smtp://' + encodeURIComponent(email.username) + ':' + encodeURIComponent(email.password) + '@' + encodeURIComponent(email.server) + ':' + email.port;
-    }       
+    } 
+
+   // Crea Administrador
+ 
+
+
+   var id;
+      
+      console.log('Creando administrador');
+
+  // Si usuario ya existe emitir mensaje que existe
+  try {
+          id= Accounts.createUser({
+              username: "ddiaz",
+              password: "1234",
+              email:"yddiaz@gmail.com",
+              profile: {
+                             nombre:'Daniel',
+                             dni:'00000001',
+                             telefono:'999999999',
+                             ocupacion:'administrador' }
+                      });
+              
+            
+           Meteor.users.update({_id: id}, {$set:{'emails.0.verified': true}});
+          if (id!==null) 
+            {
+             console.log('Usuario creado¡¡¡, creando rol admin')  
+             Roles.addUsersToRoles(id, ['admin']);
+             }
+       }
+  catch (e) { console.log (e.reason);  }
+
+          // if (id!==null) 
+          //   {
+          //    console.log('Usuario creado¡¡¡, creando rol admin')  
+          //    Roles.addUsersToRoles(id, ['admin']);
+          //  }
+
+          //  else  console.log('Error , rol no admin no creado');
+
+
+
+
   }
 });

@@ -184,6 +184,7 @@ Router.map(function () {
   this.route('errorenroll', {path: '/shared/errorenrroll'});
 this.route('enroll', {path: '/accounts/enroll/:token'});
  this.route('resetear', {path: '/accounts/resetear'});
+ this.route('listp',{path:'/listp/listp'});
 });
 
 

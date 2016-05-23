@@ -1,0 +1,76 @@
+
+<!-- <template name="Listp">
+  <section id="listp" class="section-padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-5 col-sm-6 text-right">
+          <h1 class="big-headline  waypoint fade-up">Lista de PreInscriptos de</h1>
+          <div class="waypoint fade-right">
+          <p class="lead"> Aqui poner algo..</p>
+          
+         </div>
+      
+        </div>
+
+        <div class="col-sm-6 col-md-offset-1 col-md-6 text-center">
+          <img class="img-resposive" src="/images/handstand56.jpg">
+        </div>
+      </div>
+    </div>
+  </section>
+</template>
+
+ -->
+<template name="Listp">
+
+<section id="listp" class="section-padding">
+    <div class="container">
+      <div class="row">
+          <h1>Lista de Pre-Inscriptos</h1>
+          <table class="table table-hover"> 
+         
+            <thead>
+              <tr>
+                <th>Nombre</th>
+                <th>DNI</th>
+                <th>Teléfono</th>
+                <th>Ocupación</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+
+            {{#each user}}
+              <tr>
+                <td>{{profile.nombre}}</td>
+                <td>{{profile.dni}}</td>
+                <td>{{profile.telefono}}</td>
+                <td>{{profile.ocupacion}}</td>
+        <!--         <td>
+                  {{#if priorityHigh}}
+                    <span class=”label label-danger”>{{priority}}</span>
+                  {{/if}}
+
+                  {{#if priorityMedium}}
+                    <span class=”label label-warning”>{{priority}}</span>
+                  {{/if}}
+
+                  {{#if priorityLow}}
+                    <span class=”label label-success”>{{priority}}</span>
+                  {{/if}}
+                </td>
+                <td>
+                  {{#linkTo route=’editIssue’}}
+                    <i class=”fa fa-pencil-square-o”></i>
+                  {{/linkTo}}
+                </td> -->
+              </tr>
+            {{/each}}
+
+            </tbody>
+          </table>
+      </div>
+    </div>
+</section>
+
+</template>

@@ -24,6 +24,7 @@ Meteor.methods({
       return count > 0;
    },*/
  
+ // Funcion llamada desde el template "InscriForm", que se encuentra en la carpeta contact (que en realidad es donde esta el formulario de preinscripcion)  
   'preinscribe': function (inscriFields) {
     check(inscriFields, Schema.InscriSchema);
 
@@ -39,6 +40,17 @@ Meteor.methods({
                              telefono:inscriFields.telefono,
                              ocupacion:inscriFields.ocupacion }
                       });
+
+     Roles.addUsersToRoles(idUsuario, ['preinscripto']);
+     
+     // Enviando email a nuestra cuenta de gmail con datos del inscripto para resguardo info
+      Email.send({
+      to: EmailConfig.settings.receiver, //Receiver
+      from: inscriFields.email, //Sender
+      subject: inscriFields.email + ' se ha pre-incripto al curso', //Subject
+      text: "nombre: "+ inscriFields.nombre + "," +" dni: "+inscriFields.dni+ "," +" ocupacion: "+inscriFields.ocupacion//Message
+    });    
+
 
      console.log("Usuario Creado"); 
     
