@@ -7,7 +7,7 @@
              <label class="control-label" for="Email">Your E-Mail</label>
              <div class="input-group input-group-lg">
               <span class="input-group-addon"><span class="glyphicon glyphicon-envelope glyph-color"></span></span>
-              {{> afFieldInput name='email' class="form-control" placeholder="Escribe tu email"}}
+              {{> afFieldInput name='email'  class="form-control" placeholder="Escribe tu email"}}
              </div> 
              {{#if afFieldIsInvalid name='email'}}
               <span class="help-block">{{afFieldMessage name='email'}}</span>
@@ -18,7 +18,7 @@
         <label class="control-label" for="telefono">Password</label>
         <div class="input-group input-group-lg">
           <span class="input-group-addon"><span class="glyphicon glyphicon-phone glyph-color"></span></span>
-          {{> afFieldInput name='password' class="form-control custom-control" placeholder="Escribe tu password"}}
+          {{> afFieldInput name='password' type='password' class="form-control custom-control" placeholder="Escribe tu password"}}
         </div>  
         {{#if afFieldIsInvalid name='password'}}
           <span class="help-block">{{afFieldMessage name='password'}}</span>

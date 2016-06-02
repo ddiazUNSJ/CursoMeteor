@@ -4,18 +4,20 @@
     {
       "host": "3dprintingday.tk",
       "username": "root",
-      "password": "123456789a"
+      "password": "taller3d2016"
       // // or pem file (ssh based authentication)
       // "username":"user3d",
       // "pem": "~/.ssh/id_rsa"
+
+   //  "pem": " /home/daniel/.ssh/id_rsa"
     }
   ],
 
   // Install MongoDB in the server, does not destroy local MongoDB on future setup
-  "setupMongo": false,
+  "setupMongo": true,
 
   // WARNING: Node.js is required! Only skip if you already have Node.js installed on server.
-  "setupNode": false,
+  "setupNode": true,
 
   // WARNING: If nodeVersion omitted will setup 0.10.36 by default. Do not use v, only version number.
   "nodeVersion": "0.10.36",
