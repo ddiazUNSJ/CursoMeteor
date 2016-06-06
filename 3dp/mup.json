@@ -6,7 +6,7 @@
       "username": "root",
       "password": "taller3d2016"
       // // or pem file (ssh based authentication)
-      // "username":"user3d",
+     //  "username":"user3d",
       // "pem": "~/.ssh/id_rsa"
 
    //  "pem": " /home/daniel/.ssh/id_rsa"
