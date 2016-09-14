@@ -22,5 +22,5 @@ Router.route('/', function () {
 
 
 Router.route('/dataTables', function () {
-    Router.go('dataTables');
+    this.render('dataTables');
 });
