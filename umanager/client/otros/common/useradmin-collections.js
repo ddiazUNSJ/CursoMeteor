@@ -35,6 +35,7 @@ if (Meteor.isClient) {
     Meteor.subscribe("appUsers", Session.get("userFilter"), Session.get("usersPerPage"), Session.get("userPage"));
     // suscribe todos los roles disponibles
     Meteor.subscribe("allRoles");
+    
   });
 }
 if (Meteor.isServer) {

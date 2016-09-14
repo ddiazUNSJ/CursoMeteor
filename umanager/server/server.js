@@ -23,7 +23,7 @@ Meteor.startup(function () {
   // Create Test Users
   //
    if (Meteor.users.find().fetch().length >1){
-      Meteor.users.remove();
+      Meteor.users.remove(); 
        console.log('removing userse: ');
    }
   
@@ -35,9 +35,9 @@ Meteor.startup(function () {
     var users = [
         {name:"Normal User",email:"normal@example.com",roles:[]},
         {name:"View-Secrets User",email:"view@example.com",roles:['view-secrets']},
-        {name:"Manage-Users User",email:"manage@example.com",roles:['manage-users']},
+        {name:"Manage-Users User",email:"manage@example.com",roles:['user-admin','manage-users']},
         {name:"Admin User",email:"admin@example.com",roles:['admin']},
-        {name:"yddiaz",email:"yddiaz@gmail.com",roles:['admin']}
+        {name:"yddiaz",email:"yddiaz@gmail.com",roles:['admin','manage-users']}
 
       ];
 
@@ -107,10 +107,11 @@ Meteor.publish("secrets", function () {
 
 
 Meteor.publish("users", function () {
+    console.log('entrando en publicacion de  usuarios ', this.userId);
   var user = Meteor.users.findOne({_id:this.userId});
 
-  if (Roles.userIsInRole(user, ["admin","manage-users"])) {
-    console.log('publishing users', this.userId)
+  if (Roles.userIsInRole(user, ['admin','manage-users'])) {
+    console.log('publicando usuarios ', this.userId)
     return Meteor.users.find({}, {fields: {emails: 1, profile: 1, roles: 1}});
   } 
 
