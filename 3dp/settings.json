@@ -3,7 +3,7 @@
   "private": {
     "email": {
       "username": "preinscripciones@3dprintingday.tk",
-      "password": "taller3d",
+      "password": "1c749b73a7abd90cdf3e2888200cb5d6",
       "server" : "smtp.mailgun.org",
       "port" : "587",
       "receiver":"tcrearinnovar@gmail.com"
