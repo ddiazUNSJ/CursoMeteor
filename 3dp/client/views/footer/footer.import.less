@@ -5,7 +5,7 @@
 #footer {
   background-color: @magic-color-3-light;
   color: @magic-color;
-  padding-top: 125px;
+  padding-top: 50px;
   padding-bottom: 25px;
 }
 
@@ -23,4 +23,24 @@
 
 .icon-wrapper-small img {
   max-height: 20px;
+}
+
+@media (min-width: @screen-sm-min) { 
+  #footer img {
+    margin: 0 auto;
+    margin-top: 24px;
+   // border: 8px solid @magic-color;
+    height: 100px;
+  }
+}
+
+@media (max-width: @screen-xs-max) { 
+  #footer img:before {
+    text-align: rigth;
+  }
+  #footer img {
+    margin: 0 auto;
+  //  border: 8px solid @magic-color;
+    height: 100px;
+  }
 }

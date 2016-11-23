@@ -3,10 +3,10 @@
   "private": {
     "email": {
       "username": "preinscripciones@3dprintingday.tk",
-      "password": "1c749b73a7abd90cdf3e2888200cb5d6",
+      "password": "tampocoseguro",
       "server" : "smtp.mailgun.org",
       "port" : "587",
-      "receiver":"tcrearinnovar@gmail.com"
+      "receiver":"noseguro@gmail.com"
     }
   }
 }
