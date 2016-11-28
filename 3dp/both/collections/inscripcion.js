@@ -187,13 +187,19 @@ Schema.InscriSchema = new SimpleSchema({
     max: 15,
     min: 7
    }, 
-  ocupacion: {
-       label: "Ocupación/Profesión",
+  facultad: {
+       label: "Facultad a la que pertenece 1",
        type: String,
-       max: 15,
-       min: 7
-       }
+       allowedValues: ['FCEFyN', 'FAUD','FACSO', 'FFHA', 'FI' ]
+        }
+
    
+   // facultad: {
+   //     label: "Ocupación/Profesión",
+   //     type: String,
+   //     max: 15,
+   //     min: 7
+   //     }
 });
 Schema.InscriSchema .messages({
 
@@ -236,12 +242,18 @@ Schema.InscriViewSchema = new SimpleSchema({
     max: 15,
     min: 7
    }, 
-  ocupacion: {
-       label: "Ocupación/Profesión",
+   facultad: {
+       label: "Facultad a la que pertenece 2",
        type: String,
-       max: 15,
-       min: 7
-       }
+       allowedValues: ['FCEFyN', 'FAUD','FACSO', 'FFHA', 'FI' ]
+        }
+
+  // facultad: {
+  //      label: "Ocupación/Profesión",
+  //      type: String,
+  //      max: 15,
+  //      min: 7
+  //      }
    
 });
 
@@ -338,7 +350,7 @@ Pinscri = new Mongo.Collection("pinscri");
 
 
 Pinscri.attachSchema(Schema.InscriSchema);
-//Pinscri.insert({nombre:"prueba",dni:"4958361",email:"any@body.com", telefono:"4234545",ocupacion:"obrero 3D" })
+//Pinscri.insert({nombre:"prueba",dni:"4958361",email:"any@body.com", telefono:"4234545",facultad:"obrero 3D" })
 
 if (Meteor.isClient) {
 Meteor.subscribe("pinscri");

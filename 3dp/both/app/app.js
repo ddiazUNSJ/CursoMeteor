@@ -116,7 +116,7 @@ Meteor.startup(function() {
                              nombre:'Daniel',
                              dni:'00000001',
                              telefono:'999999999',
-                             ocupacion:'administrador' }
+                             facultad:'FCEFyN' }
                       });
               
             

@@ -28,7 +28,7 @@ Meteor.methods({
   'preinscribe': function (inscriFields) {
     check(inscriFields, Schema.InscriSchema);
 
-//    Pinscri.insert({nombre:inscriFields.nombre ,dni:inscriFields.dni,email:inscriFields.email, telefono:inscriFields.telefono,ocupacion:inscriFields.ocupacion })
+//    Pinscri.insert({nombre:inscriFields.nombre ,dni:inscriFields.dni,email:inscriFields.email, telefono:inscriFields.telefono,facultad:inscriFields.facultad })
 // 
     this.unblock();
 //
@@ -38,7 +38,7 @@ Meteor.methods({
                              nombre:inscriFields.nombre,
                              dni:inscriFields.dni,
                              telefono:inscriFields.telefono,
-                             ocupacion:inscriFields.ocupacion }
+                             facultad:inscriFields.facultad }
                       });
 
      Roles.addUsersToRoles(idUsuario, ['preinscripto']);
@@ -48,7 +48,7 @@ Meteor.methods({
       to: EmailConfig.settings.receiver, //Receiver
       from: inscriFields.email, //Sender
       subject: inscriFields.email + ' se ha pre-incripto al curso', //Subject
-      text: "nombre: "+ inscriFields.nombre + "," +" dni: "+inscriFields.dni+ "," +" ocupacion: "+inscriFields.ocupacion//Message
+      text: "nombre: "+ inscriFields.nombre + "," +" dni: "+inscriFields.dni+ "," +" facultad: "+inscriFields.facultad//Message
     });    
 
 
@@ -118,7 +118,7 @@ Meteor.methods({
   'send2Email': function (inscriFields) {
     check(inscriFields, Schema.InscriSchema);
 
-//    Pinscri.insert({nombre:inscriFields.nombre ,dni:inscriFields.dni,email:inscriFields.email, telefono:inscriFields.telefono,ocupacion:inscriFields.ocupacion })
+//    Pinscri.insert({nombre:inscriFields.nombre ,dni:inscriFields.dni,email:inscriFields.email, telefono:inscriFields.telefono,facultad:inscriFields.facultad })
 // 
     this.unblock();
 //
@@ -133,7 +133,7 @@ Meteor.methods({
                 nombre:inscriFields.nombre,
                 dni:inscriFields.dni,
                 telefono:inscriFields.telefono,
-                ocupacion:inscriFields.ocupacion,
+                facultad:inscriFields.facultad,
                 email: inscriFields.email
                       });
 /*

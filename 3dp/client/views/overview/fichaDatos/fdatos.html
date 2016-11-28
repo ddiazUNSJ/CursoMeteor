@@ -56,15 +56,17 @@
       </div> 
         
          <div class="form-group">
-        <label class="control-label" for="ocupacion">Ocupación/Profesión</label>
+        <label class="control-label" for="facultad">Facultad de Origen</label>
         <div class="input-group input-group-lg">
-  <span class="input-group-addon"><span class="glyphicon glyphicon-text-size glyph-color"><label> &nbsp;  Ocupación</label></span></span>
-          {{> afFieldInput name='profile.ocupacion' class="form-control custom-control" placeholder="Indica tu ocupacion o profesión"}}
+       <span class="input-group-addon"><span class="glyphicon glyphicon-text-size glyph-color"><label> &nbsp;  Facultad</label></span></span>
+          {{> afFieldInput name='profile.facultad' type='select' options="allowed" class="form-control custom-control" placeholder="Indica tu facultad"}}
         </div>  
-        {{#if afFieldIsInvalid name='profile.ocupacion'}}
-          <span class="help-block">{{afFieldMessage name='profile.ocupacion'}}</span>
+        {{#if afFieldIsInvalid name='profile.facultad'}}
+          <span class="help-block">{{afFieldMessage name='profile.facultad'}}</span>
         {{/if}}                   
       </div> 
+               
+     
                
         
       </fieldset>     

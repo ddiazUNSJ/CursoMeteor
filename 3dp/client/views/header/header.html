@@ -39,6 +39,11 @@
                    <li class="{{ activeIfTemplateIs 'schedule' }}"> <a href="{{pathFor 'overview' hash='schedule'}}">
                        <span class='glyphicon glyphicon-calendar'></span>Calendario</a>
                    </li>
+
+                    <li class="{{ activeIfTemplateIs 'arancel' }}"> <a href="{{pathFor 'overview' hash='arancel'}}">
+                       <span class='glyphicon glyphicon-usd'></span>Arancel</a>
+                   </li>
+                   
                  
                     {{#if currentUser}}  
                       <li><a href="{{pathFor 'overview' hash='contact'}}">
