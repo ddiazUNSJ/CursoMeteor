@@ -27,12 +27,17 @@
     <div class="container">
       <div class="row">
           <h1>Lista de Pre-Inscriptos</h1>
+<!--            <p>{{user.emails.0.address}}</p>
+ -->    
           <table class="table table-hover"> 
-         
+       
+ <!--           <p>{{user().emails[1].address}}</p>
+ -->         
             <thead>
               <tr>
                 <th>Nombre</th>
                 <th>DNI</th>
+                <th>Email</th>
                 <th>Teléfono</th>
                 <th>Facultad</th>
                 <th></th>
@@ -44,6 +49,7 @@
               <tr>
                 <td>{{profile.nombre}}</td>
                 <td>{{profile.dni}}</td>
+                <td>{{emails.[0].address}}</td> 
                 <td>{{profile.telefono}}</td>
                 <td>{{profile.facultad}}</td>
         <!--         <td>
