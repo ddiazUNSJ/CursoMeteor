@@ -3,8 +3,23 @@ Template.Listp.events({
 
 Template.Listp.helpers({
   user: function () {
-    return Meteor.users.find();
+
+    return Meteor.users.find({}, {sort: [["profile.facultad", "asc"] ,["profile.dni", "asc"] ] });
+   // return Meteor.users.find({}, {sort: [["profile.dni", "asc"] , ["createdAt", "asc"] ] });
+ //   return Meteor.users.find({}, {sort: [ ["createdAt", "asc"], ["profile.facultad", "asc"] ] });
+ 
+//     return Meteor.users.find({}, {sort: [ ["createdAt", "asc"], ["profile.dni", "asc"] ] });
+
+   //   return Meteor.users.find({}, {sort: {createdAt: -1}, {profile.dni:-1}});
   }
+
+
+// Template.Listp.helpers({
+//   user: function () {
+//     return Meteor.users.find({}, {sort: {createdAt: -1}});
+//   }
+
+
 
   // Template.Listp.helpers({
   // user: function () {

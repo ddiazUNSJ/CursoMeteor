@@ -424,7 +424,7 @@ if (Meteor.isServer) {
 
      if (Roles.userIsInRole(user, ['admin','manage-users'])) {
        console.log('publicando usuarios ', this.userId)
-       return Meteor.users.find({}, {fields: {emails: 1, profile: 1, roles: 1}});
+       return Meteor.users.find({}, {fields: {createdAt: 1, emails: 1, profile: 1, roles: 1}});
      } 
      this.stop();
      return;
