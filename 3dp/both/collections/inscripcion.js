@@ -340,6 +340,10 @@ Meteor.startup(function(){
 
  
  Session.set("preinscriOk", "false");
+ Session.set("showDeleteUserDialog", "false");
+  Session.set("showEditUserDialog", "false");
+ Session.set("showInfoUserDialog", "false");
+
 });
 }
 

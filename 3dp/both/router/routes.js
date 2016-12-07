@@ -71,6 +71,10 @@ if (! Meteor.user()  ) {  //usuario no logeado
         
     {
        var ver=this.lookupTemplate();
+       if(ver=="Enroll"){
+        console.log("enroll detectada en isLoggedIn");
+          }
+        
        // if(ver=="Enroll")
        // {
        //   this.render('HeadLog',{to: 'Header'});    
@@ -184,7 +188,8 @@ Router.map(function () {
   this.route('errorenroll', {path: '/shared/errorenrroll'});
 this.route('enroll', {path: '/accounts/enroll/:token'});
  this.route('resetear', {path: '/accounts/resetear'});
- this.route('listp',{path:'/listp/listp'});
+ this.route('listp',{path:'gestionI/listp/listp'});
+ this.route('selpreinscri',{path:'gestionI/selpreinscri/selpreinscri'});
 });
 
 

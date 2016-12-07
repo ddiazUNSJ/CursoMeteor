@@ -71,7 +71,7 @@ Meteor.methods({
         + url;
 
       };
-
+console.log("preparado para enviar url");// console.log(url); 
       //enviando email a usuario
      if (idUsuario) Accounts.sendEnrollmentEmail (idUsuario); 
      return idUsuario;
@@ -113,6 +113,7 @@ Meteor.methods({
            };
           //enviando email a usuario
          if (idUsuario) Accounts.sendResetPasswordEmail(idUsuario); 
+         console.log("Password enviado"); 
          return idUsuario;
        }
      else
@@ -143,7 +144,7 @@ Meteor.methods({
                       });
 /*
 
-    process.env.MAIL_URL="smtp://tcrearinnovar@gmail.com:taller22y23@smtp.gmail.com:465/"; 
+    process.env.MAIL_URL="smtp://tcrearinnovar@gmail.com:poneelpass@smtp.gmail.com:465/"; 
       console.log("configuracion gmail"); 
     Email.send({
       to: "yddiaz@gmail.com", //Receiver
