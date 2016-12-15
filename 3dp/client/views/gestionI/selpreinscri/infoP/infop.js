@@ -39,6 +39,6 @@ Template.infoUserDialog.helpers({
     return Template.infoUserDialog.user;
   },
   username: function () {
-    return Session.get("dlgUserName");
+    return Template.infoUserDialog.user.profile.nombre;
   }
 });
