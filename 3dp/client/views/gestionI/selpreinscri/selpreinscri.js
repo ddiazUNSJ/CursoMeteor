@@ -101,6 +101,7 @@ Template.Selpreinscri.events({
   'click .adminusers .glyphicon-info-sign': function(event, template) {
     var id = getUIDFromEvent(event);
     if (id) {
+      // Funcion que est en infoP.js
       openInfoUserDialog(id);
     }
   },
